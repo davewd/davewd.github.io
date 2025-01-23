@@ -1,0 +1,36 @@
+{
+    "projects": [
+      {
+        "id": "proj-001",
+        "name": "Automated Trading System",
+        "description": "Python-based algorithmic trading platform",
+        "status": "Active",
+        "year": "2024",
+        "tags": ["automation", "python", "finance"]
+      },
+      {
+        "id": "proj-002",
+        "name": "Team Performance Dashboard",
+        "description": "Real-time team metrics visualization",
+        "status": "Completed",
+        "year": "2023",
+        "tags": ["analytics", "coaching", "dashboard"]
+      },
+      {
+        "id": "proj-003",
+        "name": "Process Automation Framework",
+        "description": "Enterprise automation toolkit",
+        "status": "Active",
+        "year": "2024",
+        "tags": ["automation", "enterprise", "toolkit"]
+      },
+      {
+        "id": "proj-004",
+        "name": "Coaching Analytics Platform",
+        "description": "Data-driven team coaching insights",
+        "status": "In Development",
+        "year": "2024",
+        "tags": ["coaching", "analytics", "data"]
+      }
+    ]
+  }
