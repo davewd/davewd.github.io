@@ -2,7 +2,7 @@ export interface Project {
     id: string;
     name: string;
     description: string;
-    status: 'Active' | 'Completed' | 'In Development';
+    status: string;
     year: string;
     tags: string[];
   }

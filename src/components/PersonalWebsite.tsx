@@ -1,7 +1,6 @@
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
-import ProjectsTable from './components/projects/ProjectsTable';
+import ProjectsContainer from './projects/ProjectsContainer';
 
 const PersonalWebsite = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -81,7 +80,7 @@ const PersonalWebsite = () => {
             </div>
           </div>
         ) : (
-          <ProjectsTable />
+          <ProjectsContainer />
         )}
       </div>
     </div>

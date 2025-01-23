@@ -1,6 +1,5 @@
 import React from 'react';
 import { Project, SortConfig } from '../../types';
-import { ArrowUpDown } from 'lucide-react';
 
 interface ProjectsTableProps {
   projects: Project[];
