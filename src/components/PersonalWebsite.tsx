@@ -10,7 +10,7 @@ const PersonalWebsite = () => {
       {/* Header and Tab Navigation remain the same as previous version */}
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Dave Dawson</h1>
-        <p className="text-xl mb-6">Team coach. Quantitative engineer. Relentless Automator</p>
+        <p className="text-xl mb-6">Team coach. Quantitative engineer. Relentless Growth through Automation</p>
         
         <div className="flex justify-center gap-6 mb-8">
           <a href="#" className="hover:opacity-70">
