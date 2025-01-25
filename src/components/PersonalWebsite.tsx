@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import ProjectsContainer from './projects/ProjectsContainer';
 
 const PersonalWebsite = () => {
@@ -13,16 +15,16 @@ const PersonalWebsite = () => {
         <p className="text-xl mb-6">Quantitative engineer. Team coach.  Relentless Growth through Automation</p>
         
         <div className="flex justify-center gap-6 mb-8">
-          <a href="#" className="hover:opacity-70">
-            <Github size={24} />
+          <a href="https://github.com/davewd" target="_blank" className="hover:opacity-70">
+            <FaGithub color="#181717" size={24} />
           </a>
-          <a href="#" className="hover:opacity-70">
-            <Linkedin size={24} />
+          <a href="https://www.linkedin.com/in/davewd/" target="_blank" className="hover:opacity-70">
+            <FaLinkedin color="#181717" size={24} />
           </a>
-          <a href="#" className="hover:opacity-70">
-            <Twitter size={24} />
+          <a href="https://x.com/davedawson_co" target="_blank" className="hover:opacity-70">
+            <FaXTwitter color="#181717" size={24} />
           </a>
-          <a href="#" className="hover:opacity-70">
+          <a href="#" target="_blank" className="hover:opacity-70">
             <Mail size={24} />
           </a>
         </div>
