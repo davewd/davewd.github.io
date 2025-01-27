@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Project, SortConfig, FilterConfig } from '../../types';
 import { fetchProjects, getAllTags, getAllYears, getAllStatuses } from '../../api';
@@ -11,19 +11,19 @@ const ProjectsContainer: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [searchParams, setSearchParams] = useSearchParams();
 
-  // Parse URL parameters for sorting
-  const sortConfig: SortConfig = {
+  // Memoize sortConfig to prevent unnecessary re-renders
+  const sortConfig = useMemo((): SortConfig => ({
     key: (searchParams.get('sortKey') as keyof Project) || 'year',
     direction: (searchParams.get('sortDir') as 'asc' | 'desc') || 'desc'
-  };
+  }), [searchParams]);
 
-  // Parse URL parameters for filters
-  const filters: FilterConfig = {
+  // Memoize filters to prevent unnecessary re-renders
+  const filters = useMemo((): FilterConfig => ({
     search: searchParams.get('search') || '',
     status: searchParams.getAll('status'),
     tags: searchParams.getAll('tags'),
     year: searchParams.getAll('year')
-  };
+  }), [searchParams]);
 
   useEffect(() => {
     const loadProjects = async () => {
@@ -58,40 +58,44 @@ const ProjectsContainer: React.FC = () => {
     });
   };
 
-  const handleFilterChange = (newFilters: FilterConfig) => {
-    setSearchParams(prev => {
-      const newParams = new URLSearchParams(prev);
-      
-      // Update search
-      if (newFilters.search) {
-        newParams.set('search', newFilters.search);
-      } else {
-        newParams.delete('search');
-      }
-      
-      // Update status filters
-      newParams.delete('status');
-      newFilters.status.forEach(status => {
-        newParams.append('status', status);
-      });
-      
-      // Update tag filters
-      newParams.delete('tags');
+  const handleFilterChange = useCallback((newFilters: FilterConfig) => {
+    const newParams = new URLSearchParams(searchParams);
+    
+    // Handle search
+    if (newFilters.search) {
+      newParams.set('search', newFilters.search);
+    } else {
+      newParams.delete('search');
+    }
+
+    // Handle tags
+    newParams.delete('tags');
+    if (newFilters.tags.length > 0) {
       newFilters.tags.forEach(tag => {
         newParams.append('tags', tag);
       });
-      
-      // Update year filters
-      newParams.delete('year');
+    }
+
+    // Handle status
+    newParams.delete('status');
+    if (newFilters.status.length > 0) {
+      newFilters.status.forEach(status => {
+        newParams.append('status', status);
+      });
+    }
+
+    // Handle year
+    newParams.delete('year');
+    if (newFilters.year.length > 0) {
       newFilters.year.forEach(year => {
         newParams.append('year', year);
       });
-      
-      return newParams;
-    });
-  };
+    }
 
-  const filteredAndSortedProjects = React.useMemo(() => {
+    setSearchParams(newParams);
+  }, [searchParams, setSearchParams]);
+
+  const filteredAndSortedProjects = useMemo(() => {
     let result = [...projects];
 
     // Apply filters
@@ -122,8 +126,17 @@ const ProjectsContainer: React.FC = () => {
       const aValue = a[sortConfig.key];
       const bValue = b[sortConfig.key];
       
-      if (aValue < bValue) return sortConfig.direction === 'asc' ? -1 : 1;
-      if (aValue > bValue) return sortConfig.direction === 'asc' ? 1 : -1;
+      // Handle cases where values might be undefined
+      if (!aValue && !bValue) return 0;
+      if (!aValue) return sortConfig.direction === 'asc' ? -1 : 1;
+      if (!bValue) return sortConfig.direction === 'asc' ? 1 : -1;
+
+      // Compare string values case-insensitively
+      const aString = String(aValue).toLowerCase();
+      const bString = String(bValue).toLowerCase();
+      
+      if (aString < bString) return sortConfig.direction === 'asc' ? -1 : 1;
+      if (aString > bString) return sortConfig.direction === 'asc' ? 1 : -1;
       return 0;
     });
 

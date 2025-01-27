@@ -111,7 +111,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
     };
 
     onFilterChange(initialFilters);
-  }, []); // Only run on mount
+  }, [searchParams, onFilterChange]); // Added missing dependencies. Note: onFilterChange should be wrapped in useCallback in parent component
 
   return (
     <div className="space-y-6">
