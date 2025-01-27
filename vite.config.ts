@@ -4,11 +4,16 @@ import { VitePluginRadar } from 'vite-plugin-radar'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), VitePluginRadar({
-    // Google Analytics tag injection
-    analytics: {
-      id: 'G-5CJBYB3H5K',
-    },
-  })],
-  base: "/"
+  plugins: [
+    react(),
+    VitePluginRadar({
+      analytics: {
+        id: 'G-5CJBYB3H5K',
+      },
+    })
+  ],
+  base: "/",
+  server: {
+    historyApiFallback: true,
+  },
 })

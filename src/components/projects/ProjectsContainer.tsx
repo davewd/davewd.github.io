@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Project, SortConfig, FilterConfig } from '../../types';
 import { fetchProjects, getAllTags, getAllYears, getAllStatuses } from '../../api';
 import ProjectsTable from './ProjectsTable';
@@ -8,16 +9,21 @@ const ProjectsContainer: React.FC = () => {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [sortConfig, setSortConfig] = useState<SortConfig>({
-    key: 'year',
-    direction: 'desc'
-  });
-  const [filters, setFilters] = useState<FilterConfig>({
-    search: '',
-    status: [],
-    tags: [],
-    year: []
-  });
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // Parse URL parameters for sorting
+  const sortConfig: SortConfig = {
+    key: (searchParams.get('sortKey') as keyof Project) || 'year',
+    direction: (searchParams.get('sortDir') as 'asc' | 'desc') || 'desc'
+  };
+
+  // Parse URL parameters for filters
+  const filters: FilterConfig = {
+    search: searchParams.get('search') || '',
+    status: searchParams.getAll('status'),
+    tags: searchParams.getAll('tags'),
+    year: searchParams.getAll('year')
+  };
 
   useEffect(() => {
     const loadProjects = async () => {
@@ -36,10 +42,53 @@ const ProjectsContainer: React.FC = () => {
   }, []);
 
   const handleSort = (key: keyof Project) => {
-    setSortConfig(current => ({
-      key,
-      direction: current.key === key && current.direction === 'asc' ? 'desc' : 'asc'
-    }));
+    setSearchParams(prev => {
+      const newParams = new URLSearchParams(prev);
+      const currentKey = prev.get('sortKey');
+      const currentDir = prev.get('sortDir');
+      
+      if (currentKey === key) {
+        newParams.set('sortDir', currentDir === 'asc' ? 'desc' : 'asc');
+      } else {
+        newParams.set('sortKey', key);
+        newParams.set('sortDir', 'asc');
+      }
+      
+      return newParams;
+    });
+  };
+
+  const handleFilterChange = (newFilters: FilterConfig) => {
+    setSearchParams(prev => {
+      const newParams = new URLSearchParams(prev);
+      
+      // Update search
+      if (newFilters.search) {
+        newParams.set('search', newFilters.search);
+      } else {
+        newParams.delete('search');
+      }
+      
+      // Update status filters
+      newParams.delete('status');
+      newFilters.status.forEach(status => {
+        newParams.append('status', status);
+      });
+      
+      // Update tag filters
+      newParams.delete('tags');
+      newFilters.tags.forEach(tag => {
+        newParams.append('tags', tag);
+      });
+      
+      // Update year filters
+      newParams.delete('year');
+      newFilters.year.forEach(year => {
+        newParams.append('year', year);
+      });
+      
+      return newParams;
+    });
   };
 
   const filteredAndSortedProjects = React.useMemo(() => {
@@ -50,8 +99,7 @@ const ProjectsContainer: React.FC = () => {
       const searchLower = filters.search.toLowerCase();
       result = result.filter(project =>
         project.name.toLowerCase().includes(searchLower) ||
-        project.description.toLowerCase().includes(searchLower) ||
-        project.tags.some(tag => tag.toLowerCase().includes(searchLower))
+        project.description.toLowerCase().includes(searchLower)
       );
     }
 
@@ -61,48 +109,35 @@ const ProjectsContainer: React.FC = () => {
 
     if (filters.tags.length > 0) {
       result = result.filter(project =>
-        filters.tags.some(tag => project.tags.includes(tag))
+        project.tags.some(tag => filters.tags.includes(tag))
       );
     }
 
     if (filters.year.length > 0) {
-      result = result.filter(project => filters.year.includes(project.year));
+      result = result.filter(project => filters.year.includes(project.year.toString()));
     }
 
     // Apply sorting
     result.sort((a, b) => {
-      const aVal = a[sortConfig.key];
-      const bVal = b[sortConfig.key];
+      const aValue = a[sortConfig.key];
+      const bValue = b[sortConfig.key];
       
-      if (aVal < bVal) return sortConfig.direction === 'asc' ? -1 : 1;
-      if (aVal > bVal) return sortConfig.direction === 'asc' ? 1 : -1;
+      if (aValue < bValue) return sortConfig.direction === 'asc' ? -1 : 1;
+      if (aValue > bValue) return sortConfig.direction === 'asc' ? 1 : -1;
       return 0;
     });
 
     return result;
-  }, [projects, sortConfig, filters]);
+  }, [projects, filters, sortConfig]);
 
-  if (loading) {
-    return (
-      <div className="flex justify-center items-center p-8">
-        <div className="animate-pulse text-gray-500">Loading projects...</div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="text-red-500 p-4 text-center">
-        {error}
-      </div>
-    );
-  }
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
-    <div>
+    <div className="space-y-8">
       <ProjectFilters
         filters={filters}
-        onFilterChange={setFilters}
+        onFilterChange={handleFilterChange}
         availableTags={getAllTags(projects)}
         availableYears={getAllYears(projects)}
         availableStatuses={getAllStatuses(projects)}

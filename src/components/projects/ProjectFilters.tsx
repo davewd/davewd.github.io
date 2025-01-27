@@ -1,6 +1,7 @@
 import React from 'react';
 import { FilterConfig } from '../../types';
 import { Search } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 
 interface ProjectFiltersProps {
   filters: FilterConfig;
@@ -17,30 +18,91 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
   availableYears,
   availableStatuses
 }) => {
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const updateSearchParams = (newFilters: FilterConfig) => {
+    const newParams = new URLSearchParams(searchParams);
+    
+    // Handle search
+    if (newFilters.search) {
+      newParams.set('search', newFilters.search);
+    } else {
+      newParams.delete('search');
+    }
+
+    // Handle tags
+    if (newFilters.tags.length > 0) {
+      newParams.set('tags', newFilters.tags.join(','));
+    } else {
+      newParams.delete('tags');
+    }
+
+    // Handle status
+    if (newFilters.status.length > 0) {
+      newParams.set('status', newFilters.status.join(','));
+    } else {
+      newParams.delete('status');
+    }
+
+    // Handle year
+    if (newFilters.year.length > 0) {
+      newParams.set('year', newFilters.year.join(','));
+    } else {
+      newParams.delete('year');
+    }
+
+    setSearchParams(newParams);
+  };
+
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    onFilterChange({ ...filters, search: e.target.value });
+    const newFilters = { ...filters, search: e.target.value };
+    onFilterChange(newFilters);
+    updateSearchParams(newFilters);
   };
 
   const handleTagToggle = (tag: string) => {
     const newTags = filters.tags.includes(tag)
       ? filters.tags.filter(t => t !== tag)
       : [...filters.tags, tag];
-    onFilterChange({ ...filters, tags: newTags });
+    const newFilters = { ...filters, tags: newTags };
+    onFilterChange(newFilters);
+    updateSearchParams(newFilters);
   };
 
   const handleStatusToggle = (status: string) => {
     const newStatuses = filters.status.includes(status)
       ? filters.status.filter(s => s !== status)
       : [...filters.status, status];
-    onFilterChange({ ...filters, status: newStatuses });
+    const newFilters = { ...filters, status: newStatuses };
+    onFilterChange(newFilters);
+    updateSearchParams(newFilters);
   };
 
   const handleYearToggle = (year: string) => {
     const newYears = filters.year.includes(year)
       ? filters.year.filter(y => y !== year)
       : [...filters.year, year];
-    onFilterChange({ ...filters, year: newYears });
+    const newFilters = { ...filters, year: newYears };
+    onFilterChange(newFilters);
+    updateSearchParams(newFilters);
   };
+
+  // Initialize filters from URL on mount
+  React.useEffect(() => {
+    const search = searchParams.get('search') || '';
+    const tags = searchParams.get('tags')?.split(',') || [];
+    const status = searchParams.get('status')?.split(',') || [];
+    const year = searchParams.get('year')?.split(',') || [];
+
+    const initialFilters = {
+      search,
+      tags: tags.filter(Boolean), // Remove empty strings
+      status: status.filter(Boolean),
+      year: year.filter(Boolean)
+    };
+
+    onFilterChange(initialFilters);
+  }, []); // Only run on mount
 
   return (
     <div className="space-y-6">

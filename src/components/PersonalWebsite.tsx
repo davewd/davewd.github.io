@@ -1,11 +1,29 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
 import { Mail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import ProjectsContainer from './projects/ProjectsContainer';
 
 const PersonalWebsite = () => {
-  const [activeTab, setActiveTab] = useState("overview");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const activeTab = searchParams.get('tab') || 'overview';
+
+  useEffect(() => {
+    // Set default tab if none is specified
+    if (!searchParams.get('tab')) {
+      setSearchParams({ tab: 'overview' });
+    }
+  }, [searchParams, setSearchParams]);
+
+  const handleTabChange = (tab: string) => {
+    setSearchParams(prev => {
+      const newParams = new URLSearchParams(prev);
+      newParams.set('tab', tab);
+      return newParams;
+    });
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white text-gray-900 p-4 sm:p-8">
@@ -44,7 +62,7 @@ const PersonalWebsite = () => {
                   ? "text-gray-900" 
                   : "text-gray-500 hover:text-gray-900"
               }`}
-              onClick={() => setActiveTab("overview")}
+              onClick={() => handleTabChange("overview")}
             >
               Overview
               {activeTab === "overview" && (
@@ -57,7 +75,7 @@ const PersonalWebsite = () => {
                   ? "text-gray-900" 
                   : "text-gray-500 hover:text-gray-900"
               }`}
-              onClick={() => setActiveTab("projects")}
+              onClick={() => handleTabChange("projects")}
             >
               Projects
               {activeTab === "projects" && (
