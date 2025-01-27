@@ -55,7 +55,7 @@ const ProjectsTable: React.FC<ProjectsTableProps> = ({
           </tr>
         </thead>
         <tbody className="divide-y divide-gray-200">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <tr 
               key={project.id} 
               className="transition-colors duration-200 hover:bg-gray-50"
