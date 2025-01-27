@@ -44,13 +44,16 @@ const ProjectsTable: React.FC<ProjectsTableProps> = ({
               </div>
             </th>
             <th 
-              className="text-left px-6 py-4 text-sm font-semibold text-gray-900 cursor-pointer transition-colors duration-200 hover:bg-gray-100 last:rounded-tr-lg"
+              className="text-left px-6 py-4 text-sm font-semibold text-gray-900 cursor-pointer transition-colors duration-200 hover:bg-gray-100"
               onClick={() => onSort('year')}
             >
               <div className="flex items-center gap-2">
                 Year
                 <span className="text-gray-400">{getSortIcon('year')}</span>
               </div>
+            </th>
+            <th className="text-left px-6 py-4 text-sm font-semibold text-gray-900 last:rounded-tr-lg">
+              Link
             </th>
           </tr>
         </thead>
@@ -88,6 +91,18 @@ const ProjectsTable: React.FC<ProjectsTableProps> = ({
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
                 {project.year}
+              </td>
+              <td className="px-6 py-4 text-sm text-gray-500">
+                {project.link && (
+                  <a 
+                    href={project.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 hover:underline"
+                  >
+                    {project.link.text}
+                  </a>
+                )}
               </td>
             </tr>
           ))}

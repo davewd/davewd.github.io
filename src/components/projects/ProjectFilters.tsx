@@ -22,6 +22,12 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
 
   const updateSearchParams = (newFilters: FilterConfig) => {
     const newParams = new URLSearchParams(searchParams);
+
+    // Preserve the tab parameter
+    const tab = searchParams.get('tab');
+    if (tab) {
+      newParams.set('tab', tab);
+    }
     
     // Handle search
     if (newFilters.search) {
@@ -31,24 +37,27 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
     }
 
     // Handle tags
+    newParams.delete('tags');
     if (newFilters.tags.length > 0) {
-      newParams.set('tags', newFilters.tags.join(','));
-    } else {
-      newParams.delete('tags');
+      newFilters.tags.forEach(tag => {
+        newParams.append('tags', tag);
+      });
     }
 
     // Handle status
+    newParams.delete('status');
     if (newFilters.status.length > 0) {
-      newParams.set('status', newFilters.status.join(','));
-    } else {
-      newParams.delete('status');
+      newFilters.status.forEach(status => {
+        newParams.append('status', status);
+      });
     }
 
     // Handle year
+    newParams.delete('year');
     if (newFilters.year.length > 0) {
-      newParams.set('year', newFilters.year.join(','));
-    } else {
-      newParams.delete('year');
+      newFilters.year.forEach(year => {
+        newParams.append('year', year);
+      });
     }
 
     setSearchParams(newParams);
@@ -90,15 +99,15 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
   // Initialize filters from URL on mount
   React.useEffect(() => {
     const search = searchParams.get('search') || '';
-    const tags = searchParams.get('tags')?.split(',') || [];
-    const status = searchParams.get('status')?.split(',') || [];
-    const year = searchParams.get('year')?.split(',') || [];
+    const tags = searchParams.getAll('tags');
+    const status = searchParams.getAll('status');
+    const year = searchParams.getAll('year');
 
     const initialFilters = {
       search,
-      tags: tags.filter(Boolean), // Remove empty strings
-      status: status.filter(Boolean),
-      year: year.filter(Boolean)
+      tags,
+      status,
+      year
     };
 
     onFilterChange(initialFilters);

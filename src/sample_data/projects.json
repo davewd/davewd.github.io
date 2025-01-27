@@ -30,7 +30,8 @@
         "description": "Data-driven team coaching insights",
         "status": "In Development",
         "year": "2024",
-        "tags": ["coaching", "analytics", "data"]
+        "tags": ["coaching", "analytics", "data"],
+        "link": {"href":"https://github.com/davewd/example-repo", "text":"Repo"}
       }
     ]
   }

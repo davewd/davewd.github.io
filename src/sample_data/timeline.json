@@ -1,0 +1,23 @@
+{
+  "events": [
+    {
+      "date": "2023",
+      "title": "Senior Engineering Manager",
+      "description": "Leading engineering teams in developing innovative fintech solutions.",
+      "tags": ["Leadership", "FinTech", "Team Development"]
+    },
+    {
+      "date": "2021",
+      "title": "Technical Lead",
+      "description": "Spearheaded the development of automated trading systems.",
+      "tags": ["Trading Systems", "Team Leadership", "Architecture"]
+    },
+    {
+      "date": "2019",
+      "title": "Senior Software Engineer",
+      "description": "Developed quantitative analysis tools and trading algorithms.",
+      "tags": ["Python", "Algorithms", "Financial Analysis"],
+      "link": "https://github.com/davewd/example-repo"
+    }
+  ]
+}

@@ -5,6 +5,10 @@ export interface Project {
     status: string;
     year: string;
     tags: string[];
+    link?: {
+      href: string;
+      text: string;
+    };
   }
   
   export interface SortConfig {
