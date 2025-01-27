@@ -1,9 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
+import { VitePluginRadar } from 'vite-plugin-radar'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(),tailwindcss()],
+  plugins: [react(), VitePluginRadar({
+    // Google Analytics tag injection
+    analytics: {
+      id: 'G-5CJBYB3H5K',
+    },
+  })],
   base: "/"
 })
