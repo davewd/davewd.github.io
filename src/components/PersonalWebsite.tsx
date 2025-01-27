@@ -35,20 +35,20 @@ const PersonalWebsite = () => {
           
           <div className="flex justify-center gap-8 mb-8">
             <a href="https://github.com/davewd" target="_blank" rel="noopener noreferrer" 
-               className="transform hover:scale-110 transition-transform duration-200">
-              <FaGithub className="w-6 h-6 text-gray-700 hover:text-gray-900" />
+               className="transform hover:scale-150 transition-all duration-300">
+              <FaGithub className="w-12 h-12 text-gray-600 hover:text-gray-900 transition-colors duration-300" />
             </a>
             <a href="https://www.linkedin.com/in/davewd/" target="_blank" rel="noopener noreferrer"
-               className="transform hover:scale-110 transition-transform duration-200">
-              <FaLinkedin className="w-6 h-6 text-gray-700 hover:text-gray-900" />
+               className="transform hover:scale-150 transition-all duration-300">
+              <FaLinkedin className="w-12 h-12 text-gray-600 hover:text-gray-900 transition-colors duration-300" />
             </a>
             <a href="https://x.com/davedawson_co" target="_blank" rel="noopener noreferrer"
-               className="transform hover:scale-110 transition-transform duration-200">
-              <FaXTwitter className="w-6 h-6 text-gray-700 hover:text-gray-900" />
+               className="transform hover:scale-150 transition-all duration-300">
+              <FaXTwitter className="w-12 h-12 text-gray-600 hover:text-gray-900 transition-colors duration-300" />
             </a>
             <a href="#" target="_blank" rel="noopener noreferrer"
-               className="transform hover:scale-110 transition-transform duration-200">
-              <Mail className="w-6 h-6 text-gray-700 hover:text-gray-900" />
+               className="transform hover:scale-150 transition-all duration-300">
+              <Mail className="w-12 h-12 text-gray-600 hover:text-gray-900 transition-colors duration-300" />
             </a>
           </div>
         </header>
