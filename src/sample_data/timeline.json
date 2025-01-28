@@ -1,23 +1,92 @@
 {
   "events": [
     {
+      "date": "2025",
+      "title": "Managing Director - Quant Engineer",
+      "description": "Manager of Managers role overseeing Documentary Trade, Guarantees, Structured Trade, Supply Chain, and Commodity Finance",
+      "company": "CBA",
+      "tags": ["Documentary Trade", "Guarantees", "Structured Trade", "Supply Chain", "Commodity Finance"],
+      "location": "AU"
+    },
+    {
       "date": "2023",
-      "title": "Senior Engineering Manager",
-      "description": "Leading engineering teams in developing innovative fintech solutions.",
-      "tags": ["Leadership", "FinTech", "Team Development"]
+      "title": "Managing Director - Quant Engineer",
+      "description": "Team Lead focusing on Structured Trade, Commodity Finance, Funds Finance, and Financing Origination",
+      "company": "CBA",
+      "tags": ["Structured Trade", "Commodity Finance", "Funds Finance", "Financing Origination"],
+      "location": "AU"
     },
     {
       "date": "2021",
-      "title": "Technical Lead",
-      "description": "Spearheaded the development of automated trading systems.",
-      "tags": ["Trading Systems", "Team Leadership", "Architecture"]
+      "title": "Executive Director - Quant Engineer",
+      "description": "Team Lead role in Structured Trade",
+      "company": "CBA",
+      "tags": ["Structured Trade"],
+      "location": "AU"
     },
     {
       "date": "2019",
-      "title": "Senior Software Engineer",
-      "description": "Developed quantitative analysis tools and trading algorithms.",
-      "tags": ["Python", "Algorithms", "Financial Analysis"],
-      "link": "https://github.com/davewd/example-repo"
+      "title": "Director - Quant Engineer",
+      "description": "Team Lead role in FX Automated Execution and Structured Trade Finance",
+      "company": "CBA",
+      "tags": ["FX Automated Execution", "Structured Trade Finance"],
+      "location": "AU"
+    },
+    {
+      "date": "2018",
+      "title": "Vice President - Quant Engineer",
+      "description": "Individual Contributor role focusing on Equity Single Stock Automated Trading",
+      "company": "Goldman Sachs",
+      "tags": ["Equity Single Stock Automated Trading"],
+      "location": "AU"
+    },
+    {
+      "date": "2016",
+      "title": "Vice President - Quant Engineer",
+      "description": "Individual Contributor role in Financial Digital Marketing & AI",
+      "company": "Goldman Sachs",
+      "tags": ["Financial Digital Marketing", "AI"],
+      "location": "AU / NY / HK"
+    },
+    {
+      "date": "2014",
+      "title": "Vice President - Quant Engineer",
+      "description": "Individual Contributor role in Equity Portfolio Trading & Distribution",
+      "company": "Goldman Sachs",
+      "tags": ["Equity Portfolio Trading", "Distribution"],
+      "location": "AU"
+    },
+    {
+      "date": "2013",
+      "title": "Associate - Quant Engineer",
+      "description": "Individual Contributor role in Equity Automated Execution, Quantitative Analytics, Web Distribution, and Startups",
+      "company": "Goldman Sachs",
+      "tags": ["Equity Automated Execution", "Quantitative Analytics", "Web Distribution", "Startups"],
+      "location": "UK"
+    },
+    {
+      "date": "2009",
+      "title": "Associate - Quant Engineer",
+      "description": "Individual Contributor role in Equity Automated Execution, Quantitative Analytics, and Optimization",
+      "company": "Goldman Sachs",
+      "tags": ["Equity Automated Execution", "Quantitative Analytics", "Optimization"],
+      "location": "UK"
+    },
+    {
+      "date": "2007",
+      "title": "Analyst - Engineer",
+      "description": "Individual Contributor role in Equity Finance, Trading Strategies, Futures Basis, and Dividend Estimation",
+      "company": "Goldman Sachs",
+      "tags": ["Equity Finance", "Trading Strategies", "Futures Basis", "Dividend Estimation"],
+      "location": "UK"
+    },
+    {
+      "date": "2006",
+      "title": "Intern - Engineer",
+      "description": "Internship focusing on Equity Finance, Trade Infrastructure, and Equity Modelling",
+      "company": "Goldman Sachs",
+      "tags": ["Equity Finance", "Trade Infrastructure", "Equity Modelling"],
+      "location": "UK"
     }
   ]
 }
