@@ -9,16 +9,21 @@ import quotesData from '../json_data/quotes/quotes.json';
 const PersonalWebsite: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeTab = searchParams.get('tab') || 'values';
-  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(
+    Math.floor(Math.random() * quotesData.quotes.length)
+  );
 
   const handleTabClick = (tab: string) => {
     setSearchParams({ tab });
   };
 
   const nextQuote = () => {
-    setCurrentQuoteIndex((prevIndex) => 
-      (prevIndex + 1) % quotesData.quotes.length
-    );
+    let newIndex;
+    do {
+      newIndex = Math.floor(Math.random() * quotesData.quotes.length);
+    } while (newIndex === currentQuoteIndex && quotesData.quotes.length > 1);
+    
+    setCurrentQuoteIndex(newIndex);
   };
 
   const renderContent = () => {
