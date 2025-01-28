@@ -135,6 +135,10 @@ const PersonalWebsite: React.FC = () => {
           {renderContent()}
         </main>
       </div>
+            {/* Footer */}
+            <div className="text-center mt-8 text-sm text-gray-500">
+        Made in Sydney with <span style={{ fontSize: '1.2em' }}>❤️</span>
+      </div>
     </div>
   );
 };
