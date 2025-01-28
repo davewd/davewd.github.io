@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import timelineData from '../../sample_data/timeline.json';
+import timelineData from '../../json_data/sample_data/timeline.json';
 
 interface TimelineEvent {
   date: string;

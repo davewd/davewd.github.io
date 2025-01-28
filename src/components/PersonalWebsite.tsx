@@ -1,23 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { Mail } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 import ProjectsContainer from './projects/ProjectsContainer';
 import TimelineContainer from './timeline/TimelineContainer';
+import quotesData from '../json_data/quotes/quotes.json';
 
 const PersonalWebsite: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const activeTab = searchParams.get('tab') || 'overview';
+  const activeTab = searchParams.get('tab') || 'values';
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
 
   const handleTabClick = (tab: string) => {
     setSearchParams({ tab });
   };
 
+  const nextQuote = () => {
+    setCurrentQuoteIndex((prevIndex) => 
+      (prevIndex + 1) % quotesData.quotes.length
+    );
+  };
+
   const renderContent = () => {
     switch (activeTab) {
-      case 'overview':
+      case 'values':
         return (
           <div className="space-y-12">
+                        <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer" onClick={nextQuote}>
+              <h2 className="text-3xl font-bold mb-6 text-gray-900">
+                "{quotesData.quotes[currentQuoteIndex].Quote}"
+              </h2>
+              <p className="text-gray-600 text-right">- {quotesData.quotes[currentQuoteIndex].Author}</p>
+            </div>
+
             <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
               <h2 className="text-3xl font-bold mb-6 text-gray-900">About Me</h2>
               <p className="text-gray-600 leading-relaxed">
@@ -42,9 +57,9 @@ const PersonalWebsite: React.FC = () => {
             </div>
           </div>
         );
-      case 'timeline':
+      case 'outcomes':
         return <TimelineContainer />;
-      case 'projects':
+      case 'effort':
         return (
           <div className="bg-white rounded-xl p-8 shadow-sm">
             <ProjectsContainer />
@@ -90,41 +105,41 @@ const PersonalWebsite: React.FC = () => {
 
           <nav className="flex justify-center border-b border-gray-200 mb-12">
             <button
-              onClick={() => handleTabClick('overview')}
+              onClick={() => handleTabClick('values')}
               className={`px-6 py-3 font-medium transition-all duration-200 relative ${
-                activeTab === 'overview'
+                activeTab === 'values'
                   ? 'text-gray-900'
                   : 'text-gray-500 hover:text-gray-900'
               }`}
             >
-              Overview
-              {activeTab === 'overview' && (
+              Values
+              {activeTab === 'values' && (
                 <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gray-900 transition-all duration-200"></div>
               )}
             </button>
             <button
-              onClick={() => handleTabClick('timeline')}
+              onClick={() => handleTabClick('outcomes')}
               className={`px-6 py-3 font-medium transition-all duration-200 relative ${
-                activeTab === 'timeline'
+                activeTab === 'outcomes'
                   ? 'text-gray-900'
                   : 'text-gray-500 hover:text-gray-900'
               }`}
             >
-              Timeline
-              {activeTab === 'timeline' && (
+              Outcomes
+              {activeTab === 'outcomes' && (
                 <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gray-900 transition-all duration-200"></div>
               )}
             </button>
             <button
-              onClick={() => handleTabClick('projects')}
+              onClick={() => handleTabClick('effort')}
               className={`px-6 py-3 font-medium transition-all duration-200 relative ${
-                activeTab === 'projects'
+                activeTab === 'effort'
                   ? 'text-gray-900'
                   : 'text-gray-500 hover:text-gray-900'
               }`}
             >
-              Projects
-              {activeTab === 'projects' && (
+              Effort
+              {activeTab === 'effort' && (
                 <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gray-900 transition-all duration-200"></div>
               )}
             </button>

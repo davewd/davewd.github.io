@@ -1,4 +1,4 @@
-import projectData from './sample_data/projects.json';
+import projectData from './json_data/sample_data/projects.json';
 import { Project } from './types';
 
 // Simulating API latency

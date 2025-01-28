@@ -48,3 +48,7 @@ export default tseslint.config({
   },
 })
 ```
+
+
+# Quotes subModule:
+- git subtree pull https://github.com/davewd/quotes.git main --squash 
