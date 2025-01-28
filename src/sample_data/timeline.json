@@ -3,90 +3,112 @@
     {
       "date": "2025",
       "title": "Managing Director - Quant Engineer",
-      "description": "Manager of Managers role overseeing Documentary Trade, Guarantees, Structured Trade, Supply Chain, and Commodity Finance",
+      "description": "Manager of Managers",
       "company": "CBA",
+      "companyColor": "#FFB700",
+      "companyLogo": "/src/assets/cba_logo.svg",
       "tags": ["Documentary Trade", "Guarantees", "Structured Trade", "Supply Chain", "Commodity Finance"],
-      "location": "AU"
+      "location": "🇦🇺"
     },
     {
       "date": "2023",
       "title": "Managing Director - Quant Engineer",
-      "description": "Team Lead focusing on Structured Trade, Commodity Finance, Funds Finance, and Financing Origination",
+      "description": "Manager of Managers",
       "company": "CBA",
+      "companyColor": "#FFB700",
+      "companyLogo": "/src/assets/cba_logo.svg",
       "tags": ["Structured Trade", "Commodity Finance", "Funds Finance", "Financing Origination"],
-      "location": "AU"
+      "location": "🇦🇺"
     },
     {
       "date": "2021",
       "title": "Executive Director - Quant Engineer",
-      "description": "Team Lead role in Structured Trade",
+      "description": "Team Lead",
       "company": "CBA",
+      "companyColor": "#FFB700",
+      "companyLogo": "/src/assets/cba_logo.svg",
       "tags": ["Structured Trade"],
-      "location": "AU"
+      "location": "🇦🇺"
     },
     {
       "date": "2019",
       "title": "Director - Quant Engineer",
-      "description": "Team Lead role in FX Automated Execution and Structured Trade Finance",
+      "description": "Team Lead",
       "company": "CBA",
+      "companyColor": "#FFB700",
+      "companyLogo": "/src/assets/cba_logo.svg",
       "tags": ["FX Automated Execution", "Structured Trade Finance"],
-      "location": "AU"
+      "location": "🇦🇺"
     },
     {
       "date": "2018",
       "title": "Vice President - Quant Engineer",
-      "description": "Individual Contributor role focusing on Equity Single Stock Automated Trading",
+      "description": "Individual Contributor",
       "company": "Goldman Sachs",
+      "companyColor": "#6CACE4",
+      "companyLogo": "/src/assets/gs_logo.svg",
       "tags": ["Equity Single Stock Automated Trading"],
-      "location": "AU"
+      "location": "🇦🇺"
     },
     {
       "date": "2016",
       "title": "Vice President - Quant Engineer",
-      "description": "Individual Contributor role in Financial Digital Marketing & AI",
+      "description": "Individual Contributor",
       "company": "Goldman Sachs",
+      "companyColor": "#6CACE4",
+      "companyLogo": "/src/assets/gs_logo.svg",
       "tags": ["Financial Digital Marketing", "AI"],
-      "location": "AU / NY / HK"
+      "location": "🇦🇺 🇺🇸 🇭🇰"
     },
     {
       "date": "2014",
       "title": "Vice President - Quant Engineer",
-      "description": "Individual Contributor role in Equity Portfolio Trading & Distribution",
+      "description": "Individual Contributor",
       "company": "Goldman Sachs",
+      "companyColor": "#6CACE4",
+      "companyLogo": "/src/assets/gs_logo.svg",
       "tags": ["Equity Portfolio Trading", "Distribution"],
-      "location": "AU"
+      "location": "🇦🇺"
     },
     {
       "date": "2013",
       "title": "Associate - Quant Engineer",
-      "description": "Individual Contributor role in Equity Automated Execution, Quantitative Analytics, Web Distribution, and Startups",
+      "description": "Individual Contributor",
       "company": "Goldman Sachs",
+      "companyColor": "#6CACE4",
+      "companyLogo": "/src/assets/gs_logo.svg",
       "tags": ["Equity Automated Execution", "Quantitative Analytics", "Web Distribution", "Startups"],
-      "location": "UK"
+      "location": "🇬🇧"
     },
     {
       "date": "2009",
       "title": "Associate - Quant Engineer",
-      "description": "Individual Contributor role in Equity Automated Execution, Quantitative Analytics, and Optimization",
+      "description": "Individual Contributor",
       "company": "Goldman Sachs",
+      "companyColor": "#6CACE4",
+      "companyLogo": "/src/assets/gs_logo.svg",
       "tags": ["Equity Automated Execution", "Quantitative Analytics", "Optimization"],
-      "location": "UK"
+      "location": "🇬🇧"
     },
     {
       "date": "2007",
       "title": "Analyst - Engineer",
-      "description": "Individual Contributor role in Equity Finance, Trading Strategies, Futures Basis, and Dividend Estimation",
+      "description": "Individual Contributor",
       "company": "Goldman Sachs",
+      "companyColor": "#6CACE4",
+      "companyLogo": "/src/assets/gs_logo.svg",
       "tags": ["Equity Finance", "Trading Strategies", "Futures Basis", "Dividend Estimation"],
-      "location": "UK"
+      "location": "🇬🇧"
     },
     {
       "date": "2006",
       "title": "Intern - Engineer",
-      "description": "Internship focusing on Equity Finance, Trade Infrastructure, and Equity Modelling",
+      "description": "Internship",
       "company": "Goldman Sachs",
+      "companyColor": "#6CACE4",
+      "companyLogo": "/src/assets/gs_logo.svg",
       "tags": ["Equity Finance", "Trade Infrastructure", "Equity Modelling"],
-      "location": "UK"
+      "location": "🇬🇧"
     }
   ]
 }
