@@ -43,12 +43,13 @@ const ValuesContainer: React.FC = () => {
       </div>
 
       <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
-        <h2 className="text-3xl font-bold mb-6 text-gray-900">About Me</h2>
+        <h2 className="text-3xl font-bold mb-6 text-gray-900">hello world</h2>
         <p className="text-gray-600 leading-relaxed">
-          I combine team coaching expertise with quantitative engineering skills to drive organizational excellence. 
-          My passion lies in automating processes and creating data-driven solutions that enhance team performance 
-          and operational efficiency.
+          I've oeprated as an individual contributor, a team lead and a manager of managers.
+        </p><p> 
+          Teams that I collaborate with operate in highly stressful environments, at the intersection of computer Science, finance and Quantiative Engineering
         </p>
+        <p>Ultimately I aspire to create an automated digital business that benefits from quantiative Models and computer science </p>
       </div>
       
       <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
