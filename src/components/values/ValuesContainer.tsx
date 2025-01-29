@@ -20,9 +20,31 @@ const ValuesContainer: React.FC = () => {
   return (
     <div className="space-y-12">
       <div 
-        className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200 cursor-pointer" 
-        onClick={nextQuote}
+        className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200 relative group" 
       >
+        <div className="absolute top-4 left-4 flex items-center mb-6">
+          <button 
+            onClick={nextQuote}
+            className="text-gray-500 hover:text-blue-600 transition-colors duration-200 focus:outline-none"
+            aria-label="Next Quote"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="h-5 w-5 group-hover:rotate-180 transition-transform duration-300" 
+              fill="none" 
+              viewBox="0 0 24 24" 
+              stroke="currentColor"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" 
+              />
+            </svg>
+          </button>
+        </div>
+
         <h2 className="text-3xl font-bold mb-6 text-gray-900">
           "{currentQuote.Quote}"
         </h2>
