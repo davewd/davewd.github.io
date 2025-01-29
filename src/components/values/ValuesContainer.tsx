@@ -15,6 +15,8 @@ const ValuesContainer: React.FC = () => {
     setCurrentQuoteIndex(newIndex);
   };
 
+  const currentQuote = quotesData.quotes[currentQuoteIndex];
+
   return (
     <div className="space-y-12">
       <div 
@@ -22,9 +24,22 @@ const ValuesContainer: React.FC = () => {
         onClick={nextQuote}
       >
         <h2 className="text-3xl font-bold mb-6 text-gray-900">
-          "{quotesData.quotes[currentQuoteIndex].Quote}"
+          "{currentQuote.Quote}"
         </h2>
-        <p className="text-gray-600 text-right">- {quotesData.quotes[currentQuoteIndex].Author}</p>
+        <p className="text-gray-600 text-right">
+          {currentQuote.URL ? (
+            <a 
+              href={currentQuote.URL} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:underline hover:text-blue-600 transition-colors"
+            >
+              {currentQuote.Author}
+            </a>
+          ) : (
+            currentQuote.Author
+          )}
+        </p>
       </div>
 
       <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
