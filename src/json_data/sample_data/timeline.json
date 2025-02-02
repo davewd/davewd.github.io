@@ -11,56 +11,6 @@
       "location": "🇦🇺"
     },
     {
-      "date": "2023",
-      "title": "Managing Director - Quant Engineer",
-      "description": "Manager of Managers",
-      "company": "CBA",
-      "companyColor": "#FFB700",
-      "companyLogo": "/src/assets/cba_logo.svg",
-      "tags": ["Structured Trade", "Commodity Finance", "Funds Finance", "Financing Origination"],
-      "location": "🇦🇺"
-    },
-    {
-      "date": "2021",
-      "title": "Executive Director - Quant Engineer",
-      "description": "Team Lead",
-      "company": "CBA",
-      "companyColor": "#FFB700",
-      "companyLogo": "/src/assets/cba_logo.svg",
-      "tags": ["Structured Trade"],
-      "location": "🇦🇺"
-    },
-    {
-      "date": "2019",
-      "title": "Director - Quant Engineer",
-      "description": "Team Lead",
-      "company": "CBA",
-      "companyColor": "#FFB700",
-      "companyLogo": "/src/assets/cba_logo.svg",
-      "tags": ["FX Automated Execution", "Structured Trade Finance"],
-      "location": "🇦🇺"
-    },
-    {
-      "date": "2018",
-      "title": "Vice President - Quant Engineer",
-      "description": "Individual Contributor",
-      "company": "Goldman Sachs",
-      "companyColor": "#6CACE4",
-      "companyLogo": "/src/assets/gs_logo.svg",
-      "tags": ["Equity Single Stock Automated Trading"],
-      "location": "🇦🇺"
-    },
-    {
-      "date": "2016",
-      "title": "Vice President - Quant Engineer",
-      "description": "Individual Contributor",
-      "company": "Goldman Sachs",
-      "companyColor": "#6CACE4",
-      "companyLogo": "/src/assets/gs_logo.svg",
-      "tags": ["Financial Digital Marketing", "AI"],
-      "location": "🇦🇺 🇺🇸 🇭🇰"
-    },
-    {
       "date": "2014",
       "title": "Vice President - Quant Engineer",
       "description": "Individual Contributor",
@@ -71,26 +21,6 @@
       "location": "🇦🇺"
     },
     {
-      "date": "2013",
-      "title": "Associate - Quant Engineer",
-      "description": "Individual Contributor",
-      "company": "Goldman Sachs",
-      "companyColor": "#6CACE4",
-      "companyLogo": "/src/assets/gs_logo.svg",
-      "tags": ["Equity Automated Execution", "Quantitative Analytics", "Web Distribution", "Startups"],
-      "location": "🇬🇧"
-    },
-    {
-      "date": "2009",
-      "title": "Associate - Quant Engineer",
-      "description": "Individual Contributor",
-      "company": "Goldman Sachs",
-      "companyColor": "#6CACE4",
-      "companyLogo": "/src/assets/gs_logo.svg",
-      "tags": ["Equity Automated Execution", "Quantitative Analytics", "Optimization"],
-      "location": "🇬🇧"
-    },
-    {
       "date": "2007",
       "title": "Analyst - Engineer",
       "description": "Individual Contributor",
@@ -98,16 +28,6 @@
       "companyColor": "#6CACE4",
       "companyLogo": "/src/assets/gs_logo.svg",
       "tags": ["Equity Finance", "Trading Strategies", "Futures Basis", "Dividend Estimation"],
-      "location": "🇬🇧"
-    },
-    {
-      "date": "2006",
-      "title": "Intern - Engineer",
-      "description": "Individual Contributor",
-      "company": "Goldman Sachs",
-      "companyColor": "#6CACE4",
-      "companyLogo": "/src/assets/gs_logo.svg",
-      "tags": ["Equity Finance", "Trade Infrastructure", "Equity Modelling"],
       "location": "🇬🇧"
     }
   ]
