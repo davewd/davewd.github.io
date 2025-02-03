@@ -19,7 +19,7 @@ const ValuesContainer: React.FC = () => {
 
   return (
     <div className="space-y-12">
-      <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200 relative group">
+      <div className="max-w-4xl mx-auto bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200 relative group">
         <div className="absolute top-4 left-4 flex items-center mb-6">
           <button
             onClick={nextQuote}
@@ -76,7 +76,8 @@ const ValuesContainer: React.FC = () => {
         <br />
         <p>
           Ultimately I aspire to create automated digital businesses that
-          benefit from quantiative Models, computer science and aim to put data at the heart of decision making.
+          benefit from quantiative Models, computer science and aim to put data
+          at the heart of decision making.
         </p>
       </div>
     </div>
