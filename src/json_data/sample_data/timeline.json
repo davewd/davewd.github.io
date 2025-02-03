@@ -2,12 +2,29 @@
   "events": [
     {
       "date": "2025",
+      "title": "Brighter Perspectives - Debt data transforming cash flow",
+      "description": "CBA Article",
+      "company": "CBA",
+      "companyColor": "#FFB700",
+      "companyLogo": "/src/assets/cba_logo.svg",
+      "tags": ["Quantitative Analytics", "Corporate Advertising"],
+      "location": "🇦🇺",
+      "href": "https://www.cba.com.au/articles/debt-data-transforming-cash-flow-2025"
+    },
+    {
+      "date": "2025",
       "title": "Managing Director - Quant Engineer",
       "description": "Manager of Managers",
       "company": "CBA",
       "companyColor": "#FFB700",
       "companyLogo": "/src/assets/cba_logo.svg",
-      "tags": ["Documentary Trade", "Guarantees", "Structured Trade", "Supply Chain", "Commodity Finance"],
+      "tags": [
+        "Documentary Trade",
+        "Guarantees",
+        "Structured Trade",
+        "Supply Chain",
+        "Commodity Finance"
+      ],
       "location": "🇦🇺"
     },
     {
@@ -27,7 +44,12 @@
       "company": "Goldman Sachs",
       "companyColor": "#6CACE4",
       "companyLogo": "/src/assets/gs_logo.svg",
-      "tags": ["Equity Finance", "Trading Strategies", "Futures Basis", "Dividend Estimation"],
+      "tags": [
+        "Equity Finance",
+        "Trading Strategies",
+        "Futures Basis",
+        "Dividend Estimation"
+      ],
       "location": "🇬🇧"
     }
   ]

@@ -1,9 +1,18 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { FilterConfig } from "../../types";
 import { Search } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import projectTagsConfig from "../../json_data/tag_configs/project_tags.json";
 import statusTagsConfig from "../../json_data/tag_configs/status_tags.json";
+
+type TagConfig = {
+  background: string;
+  text: string;
+};
+
+type TagConfigMap = {
+  [key: string]: TagConfig;
+};
 
 interface ProjectFiltersProps {
   filters: FilterConfig;
@@ -79,30 +88,24 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
     updateSearchParams(newFilters);
   };
 
-  const getTagStyle = (tag: string) => {
-    const tagConfig = projectTagsConfig.tags[tag];
-    return tagConfig
-      ? {
-          backgroundColor: tagConfig.background,
-          color: tagConfig.text,
-        }
-      : {
-          backgroundColor: "#E5E7EB",
-          color: "#374151",
-        };
+  const getTagStyle = (tag: string): TagConfig => {
+    const tagConfig = (projectTagsConfig.tags as TagConfigMap)[tag];
+    return (
+      tagConfig || {
+        background: "#E5E7EB",
+        text: "#374151",
+      }
+    );
   };
 
-  const getStatusStyle = (status: string) => {
-    const statusConfig = statusTagsConfig.statuses[status];
-    return statusConfig
-      ? {
-          backgroundColor: statusConfig.background,
-          color: statusConfig.text,
-        }
-      : {
-          backgroundColor: "#E5E7EB",
-          color: "#374151",
-        };
+  const getStatusStyle = (status: string): TagConfig => {
+    const statusConfig = (statusTagsConfig.statuses as TagConfigMap)[status];
+    return (
+      statusConfig || {
+        background: "#E5E7EB",
+        text: "#374151",
+      }
+    );
   };
 
   // Initialize filters from URL on mount
@@ -137,14 +140,14 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
                   key={tag}
                   onClick={() => handleTagToggle(tag)}
                   style={{
-                    backgroundColor: isSelected ? '#000' : tagStyle.backgroundColor,
-                    color: isSelected ? '#fff' : tagStyle.color,
-                    borderColor: tagStyle.backgroundColor,
+                    backgroundColor: isSelected ? "#000" : tagStyle.background,
+                    color: isSelected ? "#fff" : tagStyle.text,
+                    borderColor: tagStyle.background,
                   }}
                   className={`px-3 py-1 rounded-full text-xs transition-colors duration-200 border ${
                     isSelected
-                      ? 'border-black'
-                      : 'border-transparent hover:border-gray-300'
+                      ? "border-black"
+                      : "border-transparent hover:border-gray-300"
                   }`}
                 >
                   {tag}
@@ -166,14 +169,16 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
                   key={status}
                   onClick={() => handleStatusToggle(status)}
                   style={{
-                    backgroundColor: isSelected ? '#000' : statusStyle.backgroundColor,
-                    color: isSelected ? '#fff' : statusStyle.color,
-                    borderColor: statusStyle.backgroundColor,
+                    backgroundColor: isSelected
+                      ? "#000"
+                      : statusStyle.background,
+                    color: isSelected ? "#fff" : statusStyle.text,
+                    borderColor: statusStyle.background,
                   }}
                   className={`px-3 py-1 rounded-full text-xs transition-colors duration-200 border ${
                     isSelected
-                      ? 'border-black'
-                      : 'border-transparent hover:border-gray-300'
+                      ? "border-black"
+                      : "border-transparent hover:border-gray-300"
                   }`}
                 >
                   {status}

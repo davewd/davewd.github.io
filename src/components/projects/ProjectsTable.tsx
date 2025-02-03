@@ -1,7 +1,16 @@
 import React from 'react';
-import { Project, SortConfig, TagConfig } from '../../types';
+import { Project, SortConfig } from '../../types';
 import projectTagsConfig from '../../json_data/tag_configs/project_tags.json';
 import statusTagsConfig from '../../json_data/tag_configs/status_tags.json';
+
+type TagConfig = {
+  background: string;
+  text: string;
+};
+
+type TagConfigMap = {
+  [key: string]: TagConfig;
+};
 
 interface ProjectsTableProps {
   projects: Project[];
@@ -27,7 +36,7 @@ const ProjectsTable: React.FC<ProjectsTableProps> = ({
   };
 
   const getTagStyle = (tag: string, type: 'project' | 'status'): TagConfig => {
-    const config = type === 'project' ? projectTagsConfig.tags : statusTagsConfig.statuses;
+    const config = type === 'project' ? (projectTagsConfig.tags as TagConfigMap) : (statusTagsConfig.statuses as TagConfigMap);
     const style = config[tag] || { background: '#E5E7EB', text: '#374151' }; // Default gray style
     
     // Debugging log
