@@ -12,9 +12,14 @@ import quotesData from '../json_data/quotes/quotes.json';
 const PersonalWebsite: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeTab = searchParams.get('tab') || 'values';
+  const activeSectionId = searchParams.get('section') || '';
 
-  const handleTabClick = (tab: string) => {
-    setSearchParams({ tab });
+  const handleTabClick = (tab: string, sectionId: string = '') => {
+    const params: { tab: string; section?: string } = { tab };
+    if (sectionId) {
+      params.section = sectionId;
+    }
+    setSearchParams(params);
   };
 
   const renderContent = () => {
@@ -32,7 +37,7 @@ const PersonalWebsite: React.FC = () => {
       case 'network':
         return <NetworkContainer />;
       case 'thoughts':
-        return <ThoughtsContainer />;
+        return <ThoughtsContainer activeSectionId={activeSectionId} />;
       default:
         return null;
     }

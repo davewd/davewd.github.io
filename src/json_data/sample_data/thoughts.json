@@ -1,21 +1,36 @@
 {
-  "id": "thoughts-001",
-  "title": "Professional Journey and Aspirations",
-  "sections": [
+  "thoughts": [
     {
-      "id": "section-001",
-      "title": "Professional Experience",
-      "content": "I've operated as an individual contributor, a team lead and a manager of managers."
+      "id": "thoughts-001",
+      "title": "Thought 1",
+      "sections": [
+        {
+          "id": "section-001",
+          "title": "Placeholder 1",
+          "content": ""
+        },
+        {
+          "id": "section-002",
+          "title": "Placeholder 2",
+          "content": ""
+        }
+      ]
     },
     {
-      "id": "section-002", 
-      "title": "Future Aspirations",
-      "content": "Ultimately I aspire to create automated digital businesses that benefit from quantitative Models, computer science and change the way people operate."
+      "id": "thoughts-002",
+      "title": "Thought 2",
+      "sections": [
+        {
+          "id": "section-001",
+          "title": "Placeholder 1",
+          "content": ""
+        },
+        {
+          "id": "section-002",
+          "title": "Placeholder 2",
+          "content": ""
+        }
+      ]
     }
-  ],
-  "metadata": {
-    "lastUpdated": "2025-02-03",
-    "version": "1.0",
-    "routePath": "/thoughts"
-  }
+  ]
 }
