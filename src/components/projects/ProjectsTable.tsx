@@ -128,15 +128,20 @@ const ProjectsTable: React.FC<ProjectsTableProps> = ({
                     : 'N/A'}
               </td>
               <td className="px-6 py-4 text-sm text-gray-500">
-                {project.link_href && (
-                  <a 
-                    href={project.link_href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-600 hover:text-blue-800 hover:underline"
-                  >
-                    {project.link_text || project.link_href}
-                  </a>
+                {project.links && project.links.length > 0 && (
+                  <div className="mt-2 space-x-2">
+                    {project.links.map((link, linkIndex) => (
+                      <a
+                        key={linkIndex}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-800 text-sm underline"
+                      >
+                        {link.text}
+                      </a>
+                    ))}
+                  </div>
                 )}
               </td>
             </tr>
