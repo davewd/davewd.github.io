@@ -3,134 +3,142 @@
     {
       "id": "proj-001",
       "name": "UK Iron Man",
-      "description": "",
+      "description": "Learned the hard way about 'going Long'",
       "status": "Complete",
       "year_start": 2008,
       "year_end": 2008,
       "tags": ["fitness", "endurance"],
-      "link_href": "https://www.ironman.com/",
-      "link_text": "Ironman website"
+      "links": [
+        {
+          "href": "https://www.ironman.com/",
+          "text": "Ironman website"
+        }
+      ]
     },
     {
       "id": "proj-002",
       "name": "Sydney Marathon",
-      "description": "",
+      "description": "Mind over matter",
       "status": "Complete",
       "year_start": 2018,
       "year_end": 2018,
       "tags": ["fitness", "endurance"],
-      "link_href": "https://en.wikipedia.org/wiki/Sydney_Marathon",
-      "link_text": "Sydney Marathon"
+      "links": [
+        {
+          "href": "https://en.wikipedia.org/wiki/Sydney_Marathon",
+          "text": "Sydney Marathon"
+        }
+      ]
     },
     {
       "id": "proj-003",
       "name": "Sydney Marathon",
-      "description": "",
+      "description": "Start slow. Finish Fast",
       "status": "Complete",
       "year_start": 2019,
       "year_end": 2019,
       "tags": ["fitness", "endurance"],
-      "link_href": "https://en.wikipedia.org/wiki/Sydney_Marathon",
-      "link_text": "Sydney Marathon"
+      "links": [
+        {
+          "href": "https://en.wikipedia.org/wiki/Sydney_Marathon",
+          "text": "Sydney Marathon"
+        }
+      ]
     },
     {
       "id": "proj-004",
       "name": "RASA Chatbot",
-      "description": "",
+      "description": "Understanding higher dimensionality chat bots",
       "status": "Complete",
       "year_start": 2019,
       "year_end": 2020,
       "tags": ["NLP", "learning", "chatbot"],
-      "link_href": "https://github.com/davewd/RASAchatbot",
-      "link_text": "Github Repo"
+      "links": [
+        {
+          "href": "https://github.com/davewd/RASAchatbot",
+          "text": "Github Repo"
+        }
+      ]
     },
     {
       "id": "proj-005",
       "name": "Perfect Pizza",
       "description": "In perpetual hope of creating the perfect pizza",
-      "status": "Future",
+      "status": "Active",
       "year_start": 2004,
       "year_end": null,
       "tags": [],
-      "link_href": "",
-      "link_text": ""
+      "links": []
     },
     {
       "id": "proj-006",
       "name": "Robotic Arm",
-      "description": "",
+      "description": "Mechatronics 101",
       "status": "Future",
       "year_start": null,
       "year_end": null,
       "tags": [],
-      "link_href": "",
-      "link_text": ""
+      "links": []
     },
     {
       "id": "proj-007",
       "name": "fixed wing flight Chassis",
-      "description": "",
+      "description": "Phase one of an efficient flight platform: distance",
       "status": "Future",
       "year_start": null,
       "year_end": null,
       "tags": [],
-      "link_href": "",
-      "link_text": ""
+      "links": []
     },
     {
       "id": "proj-008",
       "name": "Quadcopter Flight Chassis",
-      "description": "",
+      "description": "Phase two of an efficient flight platform: manouverability",
       "status": "Future",
       "year_start": null,
       "year_end": null,
       "tags": [],
-      "link_href": "",
-      "link_text": ""
+      "links": []
     },
     {
       "id": "proj-009",
       "name": "Ground launcher",
-      "description": "",
+      "description": "Phase 3 of an efficient flight platform: Launch Velocity",
       "status": "Future",
       "year_start": null,
       "year_end": null,
       "tags": [],
-      "link_href": "",
-      "link_text": ""
+      "links": []
     },
     {
       "id": "proj-010",
       "name": "Processing Unit",
-      "description": "",
+      "description": "Distributed platform",
       "status": "Future",
       "year_start": null,
       "year_end": null,
       "tags": [],
-      "link_href": "",
-      "link_text": ""
+      "links": []
     },
     {
       "id": "proj-011",
       "name": "ddrun",
-      "description": "",
+      "description": "Automation software",
       "status": "Active",
       "year_start": 2023,
       "year_end": null,
       "tags": [],
-      "link_href": "",
-      "link_text": ""
+      "links": []
     },
     {
       "id": "proj-012",
       "name": "Poker",
-      "description": "",
+      "description": "Nerd Social (^_^)",
       "status": "Active",
       "year_start": 2025,
       "year_end": null,
       "tags": [],
-      "link_href": "",
-      "link_text": ""
+      "links": []
     },
     {
       "id": "proj-013",
@@ -140,8 +148,7 @@
       "year_start": null,
       "year_end": null,
       "tags": [],
-      "link_href": "",
-      "link_text": ""
+      "links": []
     },
     {
       "id": "proj-014",
@@ -151,30 +158,39 @@
       "year_start": null,
       "year_end": null,
       "tags": [],
-      "link_href": "",
-      "link_text": ""
+      "links": []
     },
     {
       "id": "proj-015",
       "name": "davedawson.co",
-      "description": "",
+      "description": "Third version of this website",
       "status": "Complete",
       "year_start": 2025,
       "year_end": 2025,
       "tags": ["Personel"],
-      "link_href": "https://www.davedawson.co",
-      "link_text": "Website"
+      "links": [
+        {
+          "href": "https://www.davedawson.co",
+          "text": "Website"
+        }
+      ]
     },
     {
       "id": "proj-016",
       "name": "sho",
-      "description": "",
+      "description": "A first python package dedicated to the simple display of dataframes within a python terminal (assuming the machine has a webbrowser)",
       "status": "Complete",
       "year_start": 2021,
       "year_end": 2021,
       "tags": ["python", "open_source"],
-      "link_href": "https://github.com/davewd/sho",
-      "link_text": "Github Repo"
+      "links": [
+        {
+          "href": "https://github.com/davewd/sho",
+          "text": "Github Repo"
+        },
+        { "href": "https://pypi.org/project/sho/", "text": "PyPI" },
+        { "href": "https://pypistats.org/packages/sho", "text": "PyPI Stats" }
+      ]
     },
     {
       "id": "proj-017",
@@ -184,8 +200,12 @@
       "year_start": 2018,
       "year_end": 2018,
       "tags": ["python", "open_source"],
-      "link_href": "https://github.com/davewd/face_recognition",
-      "link_text": "Github Repo"
+      "links": [
+        {
+          "href": "https://github.com/davewd/face_recognition",
+          "text": "Github Repo"
+        }
+      ]
     }
   ]
 }
