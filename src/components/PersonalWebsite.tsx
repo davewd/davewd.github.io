@@ -135,19 +135,6 @@ const PersonalWebsite: React.FC = () => {
               )}
             </button>
             <button
-              onClick={() => handleTabClick("network")}
-              className={`px-6 py-3 font-medium transition-all duration-200 relative ${
-                activeTab === "network"
-                  ? "text-gray-900"
-                  : "text-gray-500 hover:text-gray-900"
-              }`}
-            >
-              Network
-              {activeTab === "network" && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gray-900 transition-all duration-200"></div>
-              )}
-            </button>
-            <button
               onClick={() => handleTabClick("thoughts")}
               className={`px-6 py-3 font-medium transition-all duration-200 relative ${
                 activeTab === "thoughts"
