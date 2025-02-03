@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+import thoughtsData from "../../json_data/sample_data/thoughts.json";
 import quotesData from "../../json_data/quotes/quotes.json";
 
 const ValuesContainer: React.FC = () => {
@@ -63,22 +64,21 @@ const ValuesContainer: React.FC = () => {
       </div>
 
       <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
-        <h2 className="text-3xl font-bold mb-6 text-gray-900">hello_world</h2>
-        <p className="text-gray-600 leading-relaxed">
-          I've operated as an individual contributor, a team lead and a manager
-          of managers.
-        </p>
-        <br />
-        <p>
-          Teams that I collaborate with operate in highly stressful
-          environments, at the intersection of computer Science, finance and
-          Quantiative Engineering
-        </p>
-        <br />
-        <p>
-          Ultimately I aspire to create automated digital businesses that
-          benefit from quantiative Models, computer science and change the way people operate.
-        </p>
+        <h2 className="text-3xl font-bold mb-6 text-gray-900">{thoughtsData.title}</h2>
+        
+        {thoughtsData.sections.map((section) => (
+          <div key={section.id} className="mb-6">
+            <h3 className="text-2xl font-semibold text-gray-800 mb-4">{section.title}</h3>
+            <p className="text-gray-600 leading-relaxed mb-4">{section.content}</p>
+            
+            {section.subsections && section.subsections.map((subsection) => (
+              <div key={subsection.id} className="pl-4 border-l-4 border-blue-500 mb-3">
+                <h4 className="text-lg font-medium text-gray-700">{subsection.title}</h4>
+                <p className="text-gray-500">{subsection.description}</p>
+              </div>
+            ))}
+          </div>
+        ))}
       </div>
 
       <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
