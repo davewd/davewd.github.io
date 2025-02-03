@@ -45,11 +45,11 @@ const ProjectsTable: React.FC<ProjectsTableProps> = ({
             </th>
             <th 
               className="text-left px-6 py-4 text-sm font-semibold text-gray-900 cursor-pointer transition-colors duration-200 hover:bg-gray-100"
-              onClick={() => onSort('year')}
+              onClick={() => onSort('year_start')}
             >
               <div className="flex items-center gap-2">
                 Year
-                <span className="text-gray-400">{getSortIcon('year')}</span>
+                <span className="text-gray-400">{getSortIcon('year_start')}</span>
               </div>
             </th>
             <th className="text-left px-6 py-4 text-sm font-semibold text-gray-900 last:rounded-tr-lg">
@@ -83,24 +83,24 @@ const ProjectsTable: React.FC<ProjectsTableProps> = ({
               </td>
               <td className="px-6 py-4">
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
-                  ${project.status === 'Completed' ? 'bg-green-100 text-green-800' :
-                    project.status === 'In Progress' ? 'bg-blue-100 text-blue-800' :
-                    'bg-yellow-100 text-yellow-800'}`}>
+                  ${project.status === 'Completed' ? 'bg-emerald-100 text-emerald-800' :
+                    project.status === 'In Progress' ? 'bg-sky-100 text-sky-800' :
+                    'bg-amber-100 text-amber-800'}`}>
                   {project.status}
                 </span>
               </td>
               <td className="px-6 py-4 text-sm text-gray-600">
-                {project.year}
+                {project.year_start} {project.year_end && `- ${project.year_end}`}
               </td>
               <td className="px-6 py-4 text-sm text-gray-500">
-                {project.link && (
+                {project.link_href && (
                   <a 
-                    href={project.link.href}
+                    href={project.link_href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-800 hover:underline"
                   >
-                    {project.link.text}
+                    {project.link_text || project.link_href}
                   </a>
                 )}
               </td>

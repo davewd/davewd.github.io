@@ -3,12 +3,11 @@ export interface Project {
     name: string;
     description: string;
     status: string;
-    year: string;
+    year_start: number | null;
+    year_end: number | null;
     tags: string[];
-    link?: {
-      href: string;
-      text: string;
-    };
+    link_href: string;
+    link_text: string;
   }
   
   export interface SortConfig {
