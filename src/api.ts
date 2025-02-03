@@ -11,16 +11,8 @@ export const fetchProjects = async (): Promise<Project[]> => {
 
 export const getAllTags = (projects: Project[]): string[] => {
   const tagsSet = new Set<string>();
-  projects.forEach(project => {
-    project.tags.forEach(tag => tagsSet.add(tag));
-  });
+  projects.forEach(project => project.tags.forEach(tag => tagsSet.add(tag)));
   return Array.from(tagsSet).sort();
-};
-
-export const getAllYears = (projects: Project[]): string[] => {
-  const yearsSet = new Set<string>();
-  projects.forEach(project => yearsSet.add(project.year));
-  return Array.from(yearsSet).sort().reverse();
 };
 
 export const getAllStatuses = (projects: Project[]): string[] => {

@@ -7,7 +7,7 @@ import TimelineContainer from './timeline/TimelineContainer';
 import NetworkContainer from './network/NetworkContainer';
 import ValuesContainer from './values/ValuesContainer';
 import ThoughtsContainer from './thoughts/ThoughtsContainer';
-import quotesData from '../json_data/quotes/quotes.json';
+
 
 const PersonalWebsite: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -46,7 +46,7 @@ const PersonalWebsite: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="mx-auto p-4 sm:p-8">
-        <header className="text-center py-16 mb-12">
+        <header className="text-center pt-16">
           <div className="w-32 h-32 mx-auto mb-8 rounded-full overflow-hidden ring-2 ring-gray-900/10 ring-offset-2 shadow-lg">
             <img 
               src="/dd.jpeg"

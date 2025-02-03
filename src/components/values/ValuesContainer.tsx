@@ -1,5 +1,4 @@
-import React from "react";
-import thoughtsData from "../../json_data/sample_data/thoughts.json";
+import React, { useState } from "react";
 import quotesData from "../../json_data/quotes/quotes.json";
 
 const ValuesContainer: React.FC = () => {
@@ -61,48 +60,6 @@ const ValuesContainer: React.FC = () => {
             currentQuote.Author
           )}
         </p>
-      </div>
-
-      <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
-        <h2 className="text-3xl font-bold mb-6 text-gray-900">{thoughtsData.title}</h2>
-        
-        {thoughtsData.sections.map((section) => (
-          <div key={section.id} className="mb-6">
-            <h3 className="text-2xl font-semibold text-gray-800 mb-4">{section.title}</h3>
-            <p className="text-gray-600 leading-relaxed mb-4">{section.content}</p>
-            
-            {section.subsections && section.subsections.map((subsection) => (
-              <div key={subsection.id} className="pl-4 border-l-4 border-blue-500 mb-3">
-                <h4 className="text-lg font-medium text-gray-700">{subsection.title}</h4>
-                <p className="text-gray-500">{subsection.description}</p>
-              </div>
-            ))}
-          </div>
-        ))}
-      </div>
-
-      <div className="bg-white rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-200">
-        <h2 className="text-3xl font-bold mb-6 text-gray-900">
-          Areas of Focus
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="p-6 bg-gray-50 rounded-lg">
-            <h3 className="text-xl font-bold mb-4 text-gray-900">
-              Team Development
-            </h3>
-            <p className="text-gray-600">
-              Performance Coaching, Team Dynamics, Leadership Development
-            </p>
-          </div>
-          <div className="p-6 bg-gray-50 rounded-lg">
-            <h3 className="text-xl font-bold mb-4 text-gray-900">
-              Technical Expertise
-            </h3>
-            <p className="text-gray-600">
-              Process Automation, Quantitative Analysis, System Architecture
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   );

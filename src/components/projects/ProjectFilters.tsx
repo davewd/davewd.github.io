@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { FilterConfig } from '../../types';
 import { Search } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
@@ -7,7 +7,6 @@ interface ProjectFiltersProps {
   filters: FilterConfig;
   onFilterChange: (filters: FilterConfig) => void;
   availableTags: string[];
-  availableYears: string[];
   availableStatuses: string[];
 }
 
@@ -15,7 +14,6 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
   filters,
   onFilterChange,
   availableTags,
-  availableYears,
   availableStatuses
 }) => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -52,14 +50,6 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
       });
     }
 
-    // Handle year
-    newParams.delete('year');
-    if (newFilters.year.length > 0) {
-      newFilters.year.forEach(year => {
-        newParams.append('year', year);
-      });
-    }
-
     setSearchParams(newParams);
   };
 
@@ -87,27 +77,17 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
     updateSearchParams(newFilters);
   };
 
-  const handleYearToggle = (year: string) => {
-    const newYears = filters.year.includes(year)
-      ? filters.year.filter(y => y !== year)
-      : [...filters.year, year];
-    const newFilters = { ...filters, year: newYears };
-    onFilterChange(newFilters);
-    updateSearchParams(newFilters);
-  };
-
   // Initialize filters from URL on mount
   React.useEffect(() => {
     const search = searchParams.get('search') || '';
     const tags = searchParams.getAll('tags');
     const status = searchParams.getAll('status');
-    const year = searchParams.getAll('year');
 
     const initialFilters = {
       search,
       tags,
       status,
-      year
+      year: []
     };
 
     onFilterChange(initialFilters);
@@ -130,7 +110,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
       </div>
 
       {/* Filter Groups */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Tags Filter */}
         <div className="space-y-2">
           <h3 className="text-sm font-medium text-gray-700">Tags</h3>
@@ -166,26 +146,6 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
                   }`}
               >
                 {status}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Year Filter */}
-        <div className="space-y-2">
-          <h3 className="text-sm font-medium text-gray-700">Year</h3>
-          <div className="flex flex-wrap gap-2">
-            {availableYears.map(year => (
-              <button
-                key={year}
-                onClick={() => handleYearToggle(year)}
-                className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200
-                  ${filters.year.includes(year)
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-              >
-                {year}
               </button>
             ))}
           </div>

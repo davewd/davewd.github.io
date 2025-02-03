@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Project, SortConfig, FilterConfig } from '../../types';
-import { fetchProjects, getAllTags, getAllYears, getAllStatuses } from '../../api';
+import { fetchProjects, getAllTags, getAllStatuses } from '../../api';
 import ProjectsTable from './ProjectsTable';
 import ProjectFilters from './ProjectFilters';
 
@@ -21,8 +21,7 @@ const ProjectsContainer: React.FC = () => {
   const filters = useMemo((): FilterConfig => ({
     search: searchParams.get('search') || '',
     status: searchParams.getAll('status'),
-    tags: searchParams.getAll('tags'),
-    year: searchParams.getAll('year')
+    tags: searchParams.getAll('tags')
   }), [searchParams]);
 
   useEffect(() => {
@@ -84,14 +83,6 @@ const ProjectsContainer: React.FC = () => {
       });
     }
 
-    // Handle year
-    newParams.delete('year');
-    if (newFilters.year.length > 0) {
-      newFilters.year.forEach(year => {
-        newParams.append('year', year);
-      });
-    }
-
     setSearchParams(newParams);
   }, [searchParams, setSearchParams]);
 
@@ -115,10 +106,6 @@ const ProjectsContainer: React.FC = () => {
       result = result.filter(project =>
         project.tags.some(tag => filters.tags.includes(tag))
       );
-    }
-
-    if (filters.year.length > 0) {
-      result = result.filter(project => filters.year.includes(project.year.toString()));
     }
 
     // Apply sorting
@@ -152,7 +139,6 @@ const ProjectsContainer: React.FC = () => {
         filters={filters}
         onFilterChange={handleFilterChange}
         availableTags={getAllTags(projects)}
-        availableYears={getAllYears(projects)}
         availableStatuses={getAllStatuses(projects)}
       />
       <ProjectsTable

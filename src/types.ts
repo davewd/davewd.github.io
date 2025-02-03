@@ -3,8 +3,6 @@ export interface Project {
     name: string;
     description: string;
     status: string;
-    year_start: number | null;
-    year_end: number | null;
     tags: string[];
     link_href: string;
     link_text: string;
@@ -19,5 +17,4 @@ export interface Project {
     search: string;
     status: string[];
     tags: string[];
-    year: string[];
   }
