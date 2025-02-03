@@ -1,37 +1,174 @@
 {
-    "projects": [
-      {
-        "id": "proj-001",
-        "name": "Automated Trading System",
-        "description": "Python-based algorithmic trading platform",
-        "status": "Active",
-        "year": "2024",
-        "tags": ["automation", "python", "finance"]
-      },
-      {
-        "id": "proj-002",
-        "name": "Team Performance Dashboard",
-        "description": "Real-time team metrics visualization",
-        "status": "Completed",
-        "year": "2023",
-        "tags": ["analytics", "coaching", "dashboard"]
-      },
-      {
-        "id": "proj-003",
-        "name": "Process Automation Framework",
-        "description": "Enterprise automation toolkit",
-        "status": "Active",
-        "year": "2024",
-        "tags": ["automation", "enterprise", "toolkit"]
-      },
-      {
-        "id": "proj-004",
-        "name": "Coaching Analytics Platform",
-        "description": "Data-driven team coaching insights",
-        "status": "In Development",
-        "year": "2024",
-        "tags": ["coaching", "analytics", "data"],
-        "link": {"href":"https://github.com/davewd/example-repo", "text":"Repo"}
-      }
-    ]
-  }
+  "projects": [
+    {
+      "name": "UK Iron Man",
+      "description": "",
+      "status": "Complete",
+      "year_start": 2008,
+      "year_end": 2008,
+      "tags": ["fitness", "endurance"],
+      "link_href": "https://www.ironman.com/",
+      "link_text": "Ironman website"
+    },
+    {
+      "name": "Sydney Marathon",
+      "description": "",
+      "status": "complete",
+      "year_start": 2018,
+      "year_end": 2018,
+      "tags": ["fitness", "endurance"],
+      "link_href": "https://en.wikipedia.org/wiki/Sydney_Marathon",
+      "link_text": "Sydney Marathon"
+    },
+    {
+      "name": "Sydney MArathon",
+      "description": "",
+      "status": "Complete",
+      "year_start": 2019,
+      "year_end": 2019,
+      "tags": ["fitness", "endurance"],
+      "link_href": "https://en.wikipedia.org/wiki/Sydney_Marathon",
+      "link_text": "Sydney Marathon"
+    },
+    {
+      "name": "RASA Chatbot",
+      "description": "",
+      "status": "Complete",
+      "year_start": 2019,
+      "year_end": 2020,
+      "tags": ["NLP", "play", "learning", "chatbot"],
+      "link_href": "https://github.com/davewd/RASAchatbot",
+      "link_text": "Github Repo"
+    },
+    {
+      "name": "Perfect Pizza",
+      "description": "In perpetual hope of creating the perfect pizza",
+      "status": "Future",
+      "year_start": 2004,
+      "year_end": null,
+      "tags": [],
+      "link_href": "",
+      "link_text": ""
+    },
+    {
+      "name": "Robotic Arm",
+      "description": "",
+      "status": "Future",
+      "year_start": null,
+      "year_end": null,
+      "tags": [],
+      "link_href": "",
+      "link_text": ""
+    },
+    {
+      "name": "fixed wing flight Chassis",
+      "description": "",
+      "status": "Future",
+      "year_start": null,
+      "year_end": null,
+      "tags": [],
+      "link_href": "",
+      "link_text": ""
+    },
+    {
+      "name": "Quadcopter Flight Chassis",
+      "description": "",
+      "status": "Future",
+      "year_start": null,
+      "year_end": null,
+      "tags": [],
+      "link_href": "",
+      "link_text": ""
+    },
+    {
+      "name": "Ground launcher",
+      "description": "",
+      "status": "Future",
+      "year_start": null,
+      "year_end": null,
+      "tags": [],
+      "link_href": "",
+      "link_text": ""
+    },
+    {
+      "name": "Processing Unit",
+      "description": "",
+      "status": "Future",
+      "year_start": null,
+      "year_end": null,
+      "tags": [],
+      "link_href": "",
+      "link_text": ""
+    },
+    {
+      "name": "ddrun",
+      "description": "",
+      "status": "Active",
+      "year_start": 2023,
+      "year_end": null,
+      "tags": [],
+      "link_href": "",
+      "link_text": ""
+    },
+    {
+      "name": "Poker",
+      "description": "",
+      "status": "Active",
+      "year_start": 2025,
+      "year_end": null,
+      "tags": [],
+      "link_href": "",
+      "link_text": ""
+    },
+    {
+      "name": "Mi.Capital",
+      "description": "",
+      "status": "Future",
+      "year_start": null,
+      "year_end": null,
+      "tags": [],
+      "link_href": "",
+      "link_text": ""
+    },
+    {
+      "name": "Zygo",
+      "description": "",
+      "status": "Future",
+      "year_start": null,
+      "year_end": null,
+      "tags": [],
+      "link_href": "",
+      "link_text": ""
+    },
+    {
+      "name": "davedawson.co",
+      "description": "",
+      "status": "Complete",
+      "year_start": 2025,
+      "year_end": 2025,
+      "tags": ["Personel"],
+      "link_href": "https://www.davedawson.co",
+      "link_text": "Website"
+    },
+    {
+      "name": "sho",
+      "description": "",
+      "status": "Complete",
+      "year_start": 2021,
+      "year_end": 2021,
+      "tags": ["python", "open_source"],
+      "link_href": "https://github.com/davewd/sho",
+      "link_text": "Github Repo"
+    },
+    {
+      "name": "face_recognition",
+      "description": "",
+      "status": "Complete",
+      "year_start": 2018,
+      "year_end": 2018,
+      "tags": ["python", "open_source"],
+      "link_href": "https://github.com/davewd/face_recognition",
+      "link_text": "Github Repo"
+    }
+  ]
+}
