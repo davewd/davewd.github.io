@@ -2,6 +2,8 @@ import React, { useMemo } from "react";
 import { FilterConfig } from "../../types";
 import { Search } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
+import projectTagsConfig from "../../json_data/tag_configs/project_tags.json";
+import statusTagsConfig from "../../json_data/tag_configs/status_tags.json";
 
 interface ProjectFiltersProps {
   filters: FilterConfig;
@@ -77,6 +79,32 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
     updateSearchParams(newFilters);
   };
 
+  const getTagStyle = (tag: string) => {
+    const tagConfig = projectTagsConfig.tags[tag];
+    return tagConfig
+      ? {
+          backgroundColor: tagConfig.background,
+          color: tagConfig.text,
+        }
+      : {
+          backgroundColor: "#E5E7EB",
+          color: "#374151",
+        };
+  };
+
+  const getStatusStyle = (status: string) => {
+    const statusConfig = statusTagsConfig.statuses[status];
+    return statusConfig
+      ? {
+          backgroundColor: statusConfig.background,
+          color: statusConfig.text,
+        }
+      : {
+          backgroundColor: "#E5E7EB",
+          color: "#374151",
+        };
+  };
+
   // Initialize filters from URL on mount
   React.useEffect(() => {
     const search = searchParams.get("search") || "";
@@ -95,39 +123,34 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
 
   return (
     <div className="space-y-6">
-      {/* Search Input */}
-      <div className="relative">
-        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-          <Search className="h-5 w-5 text-gray-400" />
-        </div>
-        <input
-          type="text"
-          placeholder="Search projects..."
-          className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition duration-200"
-          value={filters.search}
-          onChange={handleSearchChange}
-        />
-      </div>
-
       {/* Filter Groups */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Tags Filter */}
         <div className="space-y-2 text-center">
           <h3 className="text-sm font-medium text-gray-700">Tags</h3>
           <div className="flex flex-wrap gap-2 justify-center">
-            {availableTags.map((tag) => (
-              <button
-                key={tag}
-                onClick={() => handleTagToggle(tag)}
-                className={`px-3 py-1 rounded-full text-xs transition-colors duration-200 ${
-                  filters.tags.includes(tag)
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {tag}
-              </button>
-            ))}
+            {availableTags.map((tag) => {
+              const tagStyle = getTagStyle(tag);
+              const isSelected = filters.tags.includes(tag);
+              return (
+                <button
+                  key={tag}
+                  onClick={() => handleTagToggle(tag)}
+                  style={{
+                    backgroundColor: isSelected ? '#000' : tagStyle.backgroundColor,
+                    color: isSelected ? '#fff' : tagStyle.color,
+                    borderColor: tagStyle.backgroundColor,
+                  }}
+                  className={`px-3 py-1 rounded-full text-xs transition-colors duration-200 border ${
+                    isSelected
+                      ? 'border-black'
+                      : 'border-transparent hover:border-gray-300'
+                  }`}
+                >
+                  {tag}
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -135,20 +158,42 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
         <div className="space-y-2 text-center">
           <h3 className="text-sm font-medium text-gray-700">Status</h3>
           <div className="flex flex-wrap gap-2 justify-center">
-            {availableStatuses.map((status) => (
-              <button
-                key={status}
-                onClick={() => handleStatusToggle(status)}
-                className={`px-3 py-1 rounded-full text-xs transition-colors duration-200 ${
-                  filters.status.includes(status)
-                    ? 'bg-gray-900 text-white'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
-              >
-                {status}
-              </button>
-            ))}
+            {availableStatuses.map((status) => {
+              const statusStyle = getStatusStyle(status);
+              const isSelected = filters.status.includes(status);
+              return (
+                <button
+                  key={status}
+                  onClick={() => handleStatusToggle(status)}
+                  style={{
+                    backgroundColor: isSelected ? '#000' : statusStyle.backgroundColor,
+                    color: isSelected ? '#fff' : statusStyle.color,
+                    borderColor: statusStyle.backgroundColor,
+                  }}
+                  className={`px-3 py-1 rounded-full text-xs transition-colors duration-200 border ${
+                    isSelected
+                      ? 'border-black'
+                      : 'border-transparent hover:border-gray-300'
+                  }`}
+                >
+                  {status}
+                </button>
+              );
+            })}
           </div>
+        </div>
+        {/* Search Input */}
+        <div className="relative">
+          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+            <Search className="h-5 w-5 text-gray-400" />
+          </div>
+          <input
+            type="text"
+            placeholder="Search projects..."
+            className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-400 focus:border-transparent transition duration-200"
+            value={filters.search}
+            onChange={handleSearchChange}
+          />
         </div>
       </div>
     </div>
