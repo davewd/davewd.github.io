@@ -1,0 +1,36 @@
+{
+  "tags": {
+    "fitness": {
+      "background": "#E6F3FF",
+      "text": "#1E40AF"
+    },
+    "endurance": {
+      "background": "#F0FDF4",
+      "text": "#166534"
+    },
+    "NLP": {
+      "background": "#FEF3C7",
+      "text": "#92400E"
+    },
+    "learning": {
+      "background": "#EDE9FE",
+      "text": "#5B21B6"
+    },
+    "chatbot": {
+      "background": "#FFF1F2",
+      "text": "#9D174D"
+    },
+    "python": {
+      "background": "#DBEAFE",
+      "text": "#1E40AF"
+    },
+    "open_source": {
+      "background": "#D1FAE5",
+      "text": "#047857"
+    },
+    "Personel": {
+      "background": "#FEF3C7",
+      "text": "#B45309"
+    }
+  }
+}

@@ -6,6 +6,8 @@ export interface Project {
     tags: string[];
     link_href: string;
     link_text: string;
+    year_start?: number;
+    year_end?: number;
   }
   
   export interface SortConfig {
@@ -17,4 +19,21 @@ export interface Project {
     search: string;
     status: string[];
     tags: string[];
+  }
+
+  export interface TagConfig {
+    background: string;
+    text: string;
+  }
+
+  export interface ProjectTagsConfig {
+    tags: {
+      [key: string]: TagConfig;
+    };
+  }
+
+  export interface StatusTagsConfig {
+    statuses: {
+      [key: string]: TagConfig;
+    };
   }

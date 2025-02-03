@@ -24,7 +24,7 @@
     },
     {
       "id": "proj-003",
-      "name": "Sydney MArathon",
+      "name": "Sydney Marathon",
       "description": "",
       "status": "Complete",
       "year_start": 2019,
@@ -40,7 +40,7 @@
       "status": "Complete",
       "year_start": 2019,
       "year_end": 2020,
-      "tags": ["NLP", "play", "learning", "chatbot"],
+      "tags": ["NLP", "learning", "chatbot"],
       "link_href": "https://github.com/davewd/RASAchatbot",
       "link_text": "Github Repo"
     },

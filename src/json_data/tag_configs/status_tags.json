@@ -1,0 +1,16 @@
+{
+  "statuses": {
+    "Complete": {
+      "background": "#D1FAE5",
+      "text": "#047857"
+    },
+    "Future": {
+      "background": "#FEF3C7",
+      "text": "#B45309"
+    },
+    "Active": {
+      "background": "#DBEAFE",
+      "text": "#1E40AF"
+    }
+  }
+}
