@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react';
-import { FilterConfig } from '../../types';
-import { Search } from 'lucide-react';
-import { useSearchParams } from 'react-router-dom';
+import React, { useMemo } from "react";
+import { FilterConfig } from "../../types";
+import { Search } from "lucide-react";
+import { useSearchParams } from "react-router-dom";
 
 interface ProjectFiltersProps {
   filters: FilterConfig;
@@ -14,7 +14,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
   filters,
   onFilterChange,
   availableTags,
-  availableStatuses
+  availableStatuses,
 }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -22,31 +22,31 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
     const newParams = new URLSearchParams(searchParams);
 
     // Preserve the tab parameter
-    const tab = searchParams.get('tab');
+    const tab = searchParams.get("tab");
     if (tab) {
-      newParams.set('tab', tab);
+      newParams.set("tab", tab);
     }
-    
+
     // Handle search
     if (newFilters.search) {
-      newParams.set('search', newFilters.search);
+      newParams.set("search", newFilters.search);
     } else {
-      newParams.delete('search');
+      newParams.delete("search");
     }
 
     // Handle tags
-    newParams.delete('tags');
+    newParams.delete("tags");
     if (newFilters.tags.length > 0) {
-      newFilters.tags.forEach(tag => {
-        newParams.append('tags', tag);
+      newFilters.tags.forEach((tag) => {
+        newParams.append("tags", tag);
       });
     }
 
     // Handle status
-    newParams.delete('status');
+    newParams.delete("status");
     if (newFilters.status.length > 0) {
-      newFilters.status.forEach(status => {
-        newParams.append('status', status);
+      newFilters.status.forEach((status) => {
+        newParams.append("status", status);
       });
     }
 
@@ -61,7 +61,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
 
   const handleTagToggle = (tag: string) => {
     const newTags = filters.tags.includes(tag)
-      ? filters.tags.filter(t => t !== tag)
+      ? filters.tags.filter((t) => t !== tag)
       : [...filters.tags, tag];
     const newFilters = { ...filters, tags: newTags };
     onFilterChange(newFilters);
@@ -70,7 +70,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
 
   const handleStatusToggle = (status: string) => {
     const newStatuses = filters.status.includes(status)
-      ? filters.status.filter(s => s !== status)
+      ? filters.status.filter((s) => s !== status)
       : [...filters.status, status];
     const newFilters = { ...filters, status: newStatuses };
     onFilterChange(newFilters);
@@ -79,15 +79,15 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
 
   // Initialize filters from URL on mount
   React.useEffect(() => {
-    const search = searchParams.get('search') || '';
-    const tags = searchParams.getAll('tags');
-    const status = searchParams.getAll('status');
+    const search = searchParams.get("search") || "";
+    const tags = searchParams.getAll("tags");
+    const status = searchParams.getAll("status");
 
     const initialFilters = {
       search,
       tags,
       status,
-      year: []
+      year: [],
     };
 
     onFilterChange(initialFilters);
@@ -112,18 +112,18 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
       {/* Filter Groups */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Tags Filter */}
-        <div className="space-y-2">
+        <div className="space-y-2 text-center">
           <h3 className="text-sm font-medium text-gray-700">Tags</h3>
-          <div className="flex flex-wrap gap-2">
-            {availableTags.map(tag => (
+          <div className="flex flex-wrap gap-2 justify-center">
+            {availableTags.map((tag) => (
               <button
                 key={tag}
                 onClick={() => handleTagToggle(tag)}
-                className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200
-                  ${filters.tags.includes(tag)
+                className={`px-3 py-1 rounded-full text-xs transition-colors duration-200 ${
+                  filters.tags.includes(tag)
                     ? 'bg-gray-900 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
+                }`}
               >
                 {tag}
               </button>
@@ -132,18 +132,18 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
         </div>
 
         {/* Status Filter */}
-        <div className="space-y-2">
+        <div className="space-y-2 text-center">
           <h3 className="text-sm font-medium text-gray-700">Status</h3>
-          <div className="flex flex-wrap gap-2">
-            {availableStatuses.map(status => (
+          <div className="flex flex-wrap gap-2 justify-center">
+            {availableStatuses.map((status) => (
               <button
                 key={status}
                 onClick={() => handleStatusToggle(status)}
-                className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium transition-colors duration-200
-                  ${filters.status.includes(status)
+                className={`px-3 py-1 rounded-full text-xs transition-colors duration-200 ${
+                  filters.status.includes(status)
                     ? 'bg-gray-900 text-white'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
+                }`}
               >
                 {status}
               </button>
