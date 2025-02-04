@@ -101,30 +101,45 @@ const ProjectsContainer: React.FC = () => {
 
     // Filter by status
     if (filters.status.length > 0) {
-      result = result.filter(project => 
-        filters.status.includes(project.status)
-      );
+      result = result.filter(project => {
+        const status = project.status ?? '';
+        return filters.status.includes(status);
+      });
     }
 
     // Filter by tags
     if (filters.tags.length > 0) {
-      result = result.filter(project => 
-        project.tags.some(tag => filters.tags.includes(tag))
-      );
+      result = result.filter(project => {
+        const projectTags = project.tags ?? [];
+        return projectTags.some(tag => filters.tags.includes(tag));
+      });
     }
 
-    // Sort projects
+    // Custom sorting logic
     return result.sort((a, b) => {
-      const key = sortConfig.key;
-      const direction = sortConfig.direction;
+      // Define status priority
+      const statusPriority: { [key: string]: number } = {
+        'Active': 3,
+        'Future': 2,
+        'Complete': 1
+      };
 
-      // Safely handle sorting with null checks
-      const valueA = a[key] ?? '';
-      const valueB = b[key] ?? '';
+      // First, sort by status priority
+      const statusPriorityA = statusPriority[a.status] ?? 0;
+      const statusPriorityB = statusPriority[b.status] ?? 0;
+      if (statusPriorityA !== statusPriorityB) {
+        return statusPriorityB - statusPriorityA;
+      }
 
-      if (valueA < valueB) return direction === 'asc' ? -1 : 1;
-      if (valueA > valueB) return direction === 'asc' ? 1 : -1;
-      return 0;
+      // Then, sort by year started
+      const yearA = a.year_start ?? Infinity;
+      const yearB = b.year_start ?? Infinity;
+      if (yearA !== yearB) {
+        return yearB - yearA;
+      }
+
+      // Finally, sort alphabetically by name
+      return a.name.localeCompare(b.name);
     });
   }, [projects, filters, sortConfig]);
 
