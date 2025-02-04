@@ -1,30 +1,15 @@
 import React, { useState, useEffect } from "react";
 import timelineData from "../../json_data/sample_data/timeline.json";
 import { extractOpenGraphImage } from "../../utils/og-image-extractor";
-
-interface TimelineEvent {
-  date: string;
-  title: string;
-  description: string;
-  company: string;
-  companyColor: string;
-  location: string;
-  tags: string[];
-  ogImage?: string;
-  href?: string;
-}
-
-interface TimelineData {
-  events: TimelineEvent[];
-}
+import { TimelineEvent } from "../../types";
 
 const TimelineContainer: React.FC = () => {
-  const [events, setEvents] = useState(timelineData.events);
+  const [events, setEvents] = useState<TimelineEvent[]>(timelineData.events);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const fetchOgImages = async () => {
-      const updatedEvents = await Promise.all(
+      const updatedEvents: TimelineEvent[] = await Promise.all(
         events.map(async (event) => {
           // Only fetch OG image if href exists and ogImage is not already set
           if (event.href && !event.ogImage) {
@@ -49,7 +34,7 @@ const TimelineContainer: React.FC = () => {
   return (
     <div className="max-w-5xl mx-auto py-8">
       <div className="relative">
-        {events.map((event, index) => (
+        {events.map((event: TimelineEvent, index) => (
           <div
             key={index}
             className={`flex items-center ${

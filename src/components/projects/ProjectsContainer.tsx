@@ -141,7 +141,7 @@ const ProjectsContainer: React.FC = () => {
       // Finally, sort alphabetically by name
       return a.name.localeCompare(b.name);
     });
-  }, [projects, filters, sortConfig]);
+  }, [projects, filters]);
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
