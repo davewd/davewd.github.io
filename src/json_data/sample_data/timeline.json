@@ -13,6 +13,17 @@
     },
     {
       "date": "2025",
+      "title": "Brighter Perspectives - Debt data transforming cash flow",
+      "description": "CBA Article",
+      "company": "CBA",
+      "companyColor": "#FFB700",
+      "companyLogo": "/src/assets/cba_logo.svg",
+      "tags": ["Quantitative Analytics", "Corporate Advertising"],
+      "location": "🇦🇺",
+      "href": "https://teamglobalexp.com/blogs/-/blogs/team-global-express-formerly-toll-global-express-has-signed-a-250-million-loan"
+    },
+    {
+      "date": "2025",
       "title": "Managing Director - Quant Engineer",
       "description": "Manager of Managers",
       "company": "CBA",
