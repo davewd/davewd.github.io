@@ -39,3 +39,16 @@ export interface StatusTagsConfig {
     [key: string]: TagConfig;
   };
 }
+
+export interface TimelineEvent {
+  date: string;
+  title: string;
+  description: string;
+  company: string;
+  companyColor: string;
+  companyLogo: string;
+  tags: string[];
+  location: string;
+  href?: string;
+  ogImage?: string;
+}
