@@ -24,6 +24,42 @@
     },
     {
       "date": "2025",
+      "title": "Goldman Sachs Marquee",
+      "description": "CBA Article",
+      "company": "CBA",
+      "companyColor": "#FFB700",
+      "companyLogo": "/src/assets/cba_logo.svg",
+      "tags": ["Quantitative Analytics", "Corporate Advertising"],
+      "location": "🇦🇺",
+      "href": "https://d3.harvard.edu/platform-rctom/submission/goldman-going-for-gold-through-digital/",
+      "ogImage": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "date": "2025",
+      "title": "Goldman Sachs Marquee",
+      "description": "CBA Article",
+      "company": "CBA",
+      "companyColor": "#FFB700",
+      "companyLogo": "/src/assets/cba_logo.svg",
+      "tags": ["Quantitative Analytics", "Corporate Advertising"],
+      "location": "🇦🇺",
+      "href": "https://www.commbank.com.au/business/brighter-perspectives/why-theres-no-one-size-fits-all-solution-to-business-cash-flow-challenges.html",
+      "ogImage": ""
+    },
+    {
+      "date": "2025",
+      "title": "Goldman Sachs Marquee",
+      "description": "CBA Article",
+      "company": "CBA",
+      "companyColor": "#FFB700",
+      "companyLogo": "/src/assets/cba_logo.svg",
+      "tags": ["Quantitative Analytics", "Corporate Advertising"],
+      "location": "🇦🇺",
+      "href": "https://www.commbank.com.au/articles/business/national-resources-case-study.html",
+      "ogImage": ""
+    },
+    {
+      "date": "2025",
       "title": "Managing Director - Quant Engineer",
       "description": "Manager of Managers",
       "company": "CBA",
