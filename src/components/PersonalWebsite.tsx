@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { Mail } from "lucide-react";
 import { useSearchParams } from "react-router-dom";

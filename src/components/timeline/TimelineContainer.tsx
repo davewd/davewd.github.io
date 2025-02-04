@@ -45,7 +45,7 @@ const TimelineContainer: React.FC = () => {
                 >
                   <div className="flex justify-between items-start mb-1">
                     <div className="text-sm font-medium text-gray-500">{event.date}</div>
-                    <div className="text-sm text-gray-500 text-lg" style={{ fontSize: '1.5em' }}>{event.location}</div>
+                    <div className="text-gray-500" style={{ fontSize: '1.5em' }}>{event.location}</div>
                   </div>
                   
                   <div className="mb-1">

@@ -12,13 +12,10 @@ const ProjectsContainer: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Memoize sortConfig to prevent unnecessary re-renders
-  const [sortConfig, setSortConfig] = useState<{
-    key: keyof Project;
-    direction: 'asc' | 'desc';
-  }>({
+  const [sortConfig, setSortConfig] = useState<SortConfig>({
     key: (searchParams.get('sortKey') as keyof Project) || 'year',
-    direction: (searchParams.get('sortDir') as 'asc' | 'desc') || 'desc'
-  });
+    direction: (searchParams.get('sortDirection') as 'asc' | 'desc') || 'desc'
+  } as SortConfig);
 
   // Memoize filters to prevent unnecessary re-renders
   const filters = useMemo((): FilterConfig => ({
@@ -45,24 +42,18 @@ const ProjectsContainer: React.FC = () => {
 
   const handleSort = (key: keyof Project) => {
     setSortConfig(prev => {
-      const newConfig = { ...prev };
-      const currentKey = prev.key;
-      const currentDir = prev.direction;
+      const newConfig: SortConfig = {
+        key,
+        direction: prev.key === key && prev.direction === 'asc' ? 'desc' : 'asc'
+      };
       
-      if (currentKey === key) {
-        newConfig.direction = currentDir === 'asc' ? 'desc' : 'asc';
-      } else {
-        newConfig.key = key;
-        newConfig.direction = 'asc';
-      }
+      // Update URL params for sorting
+      const newParams = new URLSearchParams(searchParams);
+      newParams.set('sortKey', String(newConfig.key));
+      newParams.set('sortDirection', newConfig.direction);
+      setSearchParams(newParams);
       
       return newConfig;
-    });
-    setSearchParams(prev => {
-      const newParams = new URLSearchParams(prev);
-      newParams.set('sortKey', key);
-      newParams.set('sortDir', sortConfig.direction === 'asc' ? 'desc' : 'asc');
-      return newParams;
     });
   };
 
@@ -96,47 +87,43 @@ const ProjectsContainer: React.FC = () => {
   }, [searchParams, setSearchParams]);
 
   const filteredAndSortedProjects = useMemo(() => {
-    let result = [...projects];
+    let result = projects;
 
-    // Apply filters
+    // Filter by search
     if (filters.search) {
-      const searchLower = filters.search.toLowerCase();
-      result = result.filter(project =>
-        project.name.toLowerCase().includes(searchLower) ||
-        project.description.toLowerCase().includes(searchLower)
+      const searchTerm = filters.search.toLowerCase();
+      result = result.filter(project => {
+        const name = project.name?.toLowerCase() ?? '';
+        const description = project.description?.toLowerCase() ?? '';
+        return name.includes(searchTerm) || description.includes(searchTerm);
+      });
+    }
+
+    // Filter by status
+    if (filters.status.length > 0) {
+      result = result.filter(project => 
+        filters.status.includes(project.status)
       );
     }
 
-    if (filters.status.length > 0) {
-      result = result.filter(project => filters.status.includes(project.status));
-    }
-
+    // Filter by tags
     if (filters.tags.length > 0) {
-      result = result.filter(project =>
+      result = result.filter(project => 
         project.tags.some(tag => filters.tags.includes(tag))
       );
     }
 
-    // Apply sorting
+    // Sort projects
     return result.sort((a, b) => {
-      // Special handling for year_start and year_end
-      if (sortConfig.key === 'year_start') {
-        const yearA = a.year_start ?? Infinity;
-        const yearB = b.year_start ?? Infinity;
-        return sortConfig.direction === 'asc' 
-          ? yearA - yearB 
-          : yearB - yearA;
-      } else if (sortConfig.key === 'year_end') {
-        const yearA = a.year_end ?? -Infinity;
-        const yearB = b.year_end ?? -Infinity;
-        return sortConfig.direction === 'asc' 
-          ? yearA - yearB 
-          : yearB - yearA;
-      }
+      const key = sortConfig.key;
+      const direction = sortConfig.direction;
 
-      // Default sorting for other keys
-      if (a[sortConfig.key] < b[sortConfig.key]) return sortConfig.direction === 'asc' ? -1 : 1;
-      if (a[sortConfig.key] > b[sortConfig.key]) return sortConfig.direction === 'asc' ? 1 : -1;
+      // Safely handle sorting with null checks
+      const valueA = a[key] ?? '';
+      const valueB = b[key] ?? '';
+
+      if (valueA < valueB) return direction === 'asc' ? -1 : 1;
+      if (valueA > valueB) return direction === 'asc' ? 1 : -1;
       return 0;
     });
   }, [projects, filters, sortConfig]);
@@ -152,6 +139,7 @@ const ProjectsContainer: React.FC = () => {
         availableTags={getAllTags(projects)}
         availableStatuses={getAllStatuses(projects)}
         sortConfig={sortConfig}
+        onSortChange={handleSort}
       />
       <ProjectsTable
         projects={filteredAndSortedProjects}

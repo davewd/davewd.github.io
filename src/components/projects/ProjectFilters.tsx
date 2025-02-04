@@ -1,5 +1,5 @@
 import React from "react";
-import { FilterConfig } from "../../types";
+import { FilterConfig, SortConfig, Project } from "../../types";
 import { Search } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import projectTagsConfig from "../../json_data/tag_configs/project_tags.json";
@@ -19,6 +19,8 @@ interface ProjectFiltersProps {
   onFilterChange: (filters: FilterConfig) => void;
   availableTags: string[];
   availableStatuses: string[];
+  sortConfig: SortConfig;
+  onSortChange?: (key: keyof Project) => void;
 }
 
 const ProjectFilters: React.FC<ProjectFiltersProps> = ({
@@ -26,6 +28,8 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
   onFilterChange,
   availableTags,
   availableStatuses,
+  sortConfig,
+  onSortChange
 }) => {
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -59,6 +63,15 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
       newFilters.status.forEach((status) => {
         newParams.append("status", status);
       });
+    }
+
+    // Handle sorting
+    if (sortConfig.key) {
+      newParams.set("sortKey", String(sortConfig.key));
+      newParams.set("sortDirection", sortConfig.direction);
+    } else {
+      newParams.delete("sortKey");
+      newParams.delete("sortDirection");
     }
 
     setSearchParams(newParams);
@@ -199,6 +212,27 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
             value={filters.search}
             onChange={handleSearchChange}
           />
+        </div>
+        {/* Sort By */}
+        <div className="space-y-2 text-center">
+          <h3 className="text-sm font-medium text-gray-700">Sort By</h3>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {['name', 'year_start', 'year_end'].map((key) => (
+              <button
+                key={key}
+                onClick={() => onSortChange?.(key as keyof Project)}
+                className={`px-3 py-1 rounded-full text-xs transition-colors duration-200 ${
+                  sortConfig.key === key
+                    ? 'bg-gray-900 text-white'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                }`}
+              >
+                {key === 'name' ? 'Name' : 
+                 key === 'year_start' ? 'Start Year' : 
+                 'End Year'}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </div>
