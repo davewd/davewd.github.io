@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Getting Things Done",
     "author": "David Allen",
-    "theme": "Productivity",
+    "theme": "Personal Development",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -12,7 +12,7 @@
     "id": "2",
     "title": "Thinking Fast and Slow",
     "author": "Daniel Kahneman",
-    "theme": "Productivity",
+    "theme": "Psychology",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -21,7 +21,7 @@
     "id": "3",
     "title": "Drop Dead Healthy",
     "author": "AJ Jacobs",
-    "theme": "Health",
+    "theme": "Health & Wellness",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -30,7 +30,7 @@
     "id": "4",
     "title": "Stress Free Living",
     "author": "Mayo Clinic",
-    "theme": "Health",
+    "theme": "Health & Wellness",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -39,7 +39,7 @@
     "id": "5",
     "title": "Autobiography of a Yogi",
     "author": "Paramhansa Yogananda",
-    "theme": "Health",
+    "theme": "Spirituality",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -48,7 +48,7 @@
     "id": "6",
     "title": "Zen Mind, Beginner's Mind",
     "author": "Shunryu Suzuki",
-    "theme": "Health",
+    "theme": "Philosophy",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -57,7 +57,7 @@
     "id": "7",
     "title": "GRIT: The Power of Passion and Perseverance",
     "author": "Angela Duckworth",
-    "theme": "Health",
+    "theme": "Psychology",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -66,7 +66,7 @@
     "id": "8",
     "title": "How to Win Friends and Influence People",
     "author": "Dale Carnegie",
-    "theme": "Relationships/Sales",
+    "theme": "Communication",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -75,7 +75,7 @@
     "id": "9",
     "title": "Strategic Selling",
     "author": "Miller Heiman",
-    "theme": "Relationships/Sales",
+    "theme": "Business",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -84,7 +84,7 @@
     "id": "10",
     "title": "The Hard Thing About Hard Things",
     "author": "Ben Horowitz",
-    "theme": "Start Up",
+    "theme": "Entrepreneurship",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -93,7 +93,7 @@
     "id": "11",
     "title": "Zero to One",
     "author": "Blake Masters/Peter Thiel",
-    "theme": "Start Up",
+    "theme": "Innovation",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -102,7 +102,7 @@
     "id": "12",
     "title": "Tao of Leadership",
     "author": "John Heider",
-    "theme": "Start Up",
+    "theme": "Leadership",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -111,7 +111,7 @@
     "id": "13",
     "title": "Creation: Life and How to Make It",
     "author": "Steve Grand",
-    "theme": "Tech Learning",
+    "theme": "Technology",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -120,7 +120,7 @@
     "id": "14",
     "title": "Lean Startup",
     "author": "Eric Reis",
-    "theme": "Tech Learning",
+    "theme": "Entrepreneurship",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -129,7 +129,7 @@
     "id": "15",
     "title": "Rich Dad Poor Dad",
     "author": "Robert Kiyosaki",
-    "theme": "Tech Learning",
+    "theme": "Finance",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -138,7 +138,7 @@
     "id": "16",
     "title": "Viral Loop",
     "author": "Adam L. Penenberg",
-    "theme": "Tech Learning",
+    "theme": "Marketing",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -147,7 +147,7 @@
     "id": "17",
     "title": "Bringing Down the House",
     "author": "Ben Mezrich",
-    "theme": "Humor",
+    "theme": "Entertainment",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -156,7 +156,7 @@
     "id": "18",
     "title": "Booky Wook 1/2",
     "author": "Russell Brand",
-    "theme": "Humor",
+    "theme": "Entertainment",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -164,8 +164,8 @@
   {
     "id": "19",
     "title": "City Boy",
-    "author": "",
-    "theme": "Humor",
+    "author": "Edmund White",
+    "theme": "Entertainment",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -174,7 +174,7 @@
     "id": "20",
     "title": "Freakonomics",
     "author": "Steven D. Levitt & Stephen J. Dubner",
-    "theme": "Humor",
+    "theme": "Economics",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -183,7 +183,7 @@
     "id": "21",
     "title": "Superfreakonomics",
     "author": "Steven D. Levitt & Stephen J. Dubner",
-    "theme": "Humor",
+    "theme": "Economics",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -219,7 +219,7 @@
     "id": "25",
     "title": "How Google Works",
     "author": "Eric Schmidt",
-    "theme": "Biography",
+    "theme": "Technology",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -228,7 +228,7 @@
     "id": "26",
     "title": "The Everything Store",
     "author": "Brad Stone",
-    "theme": "Biography",
+    "theme": "Business",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -246,7 +246,7 @@
     "id": "28",
     "title": "Alibaba",
     "author": "Duncan Clark",
-    "theme": "Biography",
+    "theme": "Business",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -255,7 +255,7 @@
     "id": "29",
     "title": "Decoded",
     "author": "Jay-Z",
-    "theme": "Biography (Autobiography)",
+    "theme": "Entertainment",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -263,8 +263,8 @@
   {
     "id": "30",
     "title": "Duncan Bannatyne",
-    "author": "",
-    "theme": "Biography (Autobiography)",
+    "author": "Duncan Bannatyne",
+    "theme": "Biography",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -272,8 +272,8 @@
   {
     "id": "31",
     "title": "James Caan",
-    "author": "",
-    "theme": "Biography (Autobiography)",
+    "author": "James Caan",
+    "theme": "Biography",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -281,8 +281,8 @@
   {
     "id": "32",
     "title": "Stephen Fry",
-    "author": "",
-    "theme": "Biography",
+    "author": "Stephen Fry",
+    "theme": "Entertainment",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -291,7 +291,7 @@
     "id": "33",
     "title": "Shoe Dog",
     "author": "Phil Knight",
-    "theme": "Biography",
+    "theme": "Business",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -300,7 +300,7 @@
     "id": "34",
     "title": "Pushing the Limits",
     "author": "Kurt Fearnley",
-    "theme": "Biography",
+    "theme": "Inspiration",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -309,7 +309,7 @@
     "id": "35",
     "title": "Losing My Virginity",
     "author": "Richard Branson",
-    "theme": "Biography",
+    "theme": "Entrepreneurship",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -318,7 +318,7 @@
     "id": "36",
     "title": "Lessons in Business",
     "author": "Richard Branson",
-    "theme": "Biography",
+    "theme": "Business",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -327,7 +327,7 @@
     "id": "37",
     "title": "Tools of Titans",
     "author": "Tim Ferriss",
-    "theme": "Biography",
+    "theme": "Personal Development",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -336,7 +336,7 @@
     "id": "38",
     "title": "The 48 Laws of Power",
     "author": "Robert Greene",
-    "theme": "Politics/War",
+    "theme": "Strategy",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
@@ -345,7 +345,7 @@
     "id": "39",
     "title": "The Art of War",
     "author": "Sun Tzu",
-    "theme": "Politics/War",
+    "theme": "Strategy",
     "startDate": "",
     "finishDate": "",
     "status": "Complete"
