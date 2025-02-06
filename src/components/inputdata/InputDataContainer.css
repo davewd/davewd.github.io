@@ -36,7 +36,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
-  table-layout: fixed; /* Ensures consistent column widths */
+  table-layout: auto; /* Allow columns to size based on content */
 }
 
 .input-data-table th, 
@@ -44,6 +44,7 @@
   border: 1px solid #e0e0e0;
   padding: 12px;
   text-align: left;
+  white-space: nowrap; /* Prevent text wrapping */
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -63,30 +64,22 @@
   transition: background-color 0.3s ease;
 }
 
-/* Specific column width adjustments */
-.input-data-table th:nth-child(1), /* Title */
-.input-data-table td:nth-child(1) {
-  width: 15%;
+.books-tab .input-data-table th:nth-child(1), /* Theme */
+.books-tab .input-data-table td:nth-child(1) {
+  width: 20%;
 }
 
-.input-data-table th:nth-child(2), /* Description */
-.input-data-table td:nth-child(2) {
-  width: 15%;
+.books-tab .input-data-table th:nth-child(2), /* Title */
+.books-tab .input-data-table td:nth-child(2) {
+  width: 35%;
 }
 
-.input-data-table th:nth-child(3), /* Link */
-.input-data-table td:nth-child(3) {
-  width: 15%;
+.books-tab .input-data-table th:nth-child(3), /* Author */
+.books-tab .input-data-table td:nth-child(3) {
+  width: 35%;
 }
 
-.input-data-table th:nth-child(4), /* Consumed Date */
-.input-data-table td:nth-child(4) {
+.books-tab .input-data-table th:nth-child(4), /* Status */
+.books-tab .input-data-table td:nth-child(4) {
   width: 10%;
-}
-
-.input-data-table th:nth-child(5), /* Overview */
-.input-data-table td:nth-child(5) {
-  width: 45%;
-  white-space: normal;
-  word-wrap: break-word;
 }

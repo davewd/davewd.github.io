@@ -47,24 +47,37 @@ const InputDataContainer: React.FC = () => {
 };
 
 const BooksTab: React.FC = () => {
+  // Sort books by theme, then by title
+  const sortedBooks = [...booksData].sort((a, b) => {
+    // First, compare by theme
+    const themeComparison = a.theme.localeCompare(b.theme);
+    
+    // If themes are the same, compare by title
+    if (themeComparison === 0) {
+      return a.title.localeCompare(b.title);
+    }
+    
+    return themeComparison;
+  });
+
   return (
     <div className="books-tab">
       <table className="input-data-table">
         <thead>
           <tr>
+            <th>Theme</th>
             <th>Title</th>
             <th>Author</th>
-            <th>Start Date</th>
-            <th>Finish Date</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody>
-          {booksData.map((book) => (
+          {sortedBooks.map((book) => (
             <tr key={book.id}>
+              <td>{book.theme}</td>
               <td>{book.title}</td>
               <td>{book.author}</td>
-              <td>{book.startDate}</td>
-              <td>{book.finishDate}</td>
+              <td>{book.status}</td>
             </tr>
           ))}
         </tbody>

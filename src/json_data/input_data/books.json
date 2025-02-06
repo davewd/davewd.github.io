@@ -1,16 +1,353 @@
 [
   {
     "id": "1",
-    "title": "Thinking, Fast and Slow",
-    "author": "Daniel Kahneman",
-    "startDate": "2023-01-15",
-    "finishDate": "2023-03-20"
+    "title": "Getting Things Done",
+    "author": "David Allen",
+    "theme": "Productivity",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
   },
   {
     "id": "2",
-    "title": "",
-    "author": "",
+    "title": "Thinking Fast and Slow",
+    "author": "Daniel Kahneman",
+    "theme": "Productivity",
     "startDate": "",
-    "finishDate": ""
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "3",
+    "title": "Drop Dead Healthy",
+    "author": "AJ Jacobs",
+    "theme": "Health",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "4",
+    "title": "Stress Free Living",
+    "author": "Mayo Clinic",
+    "theme": "Health",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "5",
+    "title": "Autobiography of a Yogi",
+    "author": "Paramhansa Yogananda",
+    "theme": "Health",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "6",
+    "title": "Zen Mind, Beginner's Mind",
+    "author": "Shunryu Suzuki",
+    "theme": "Health",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "7",
+    "title": "GRIT: The Power of Passion and Perseverance",
+    "author": "Angela Duckworth",
+    "theme": "Health",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "8",
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "theme": "Relationships/Sales",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "9",
+    "title": "Strategic Selling",
+    "author": "Miller Heiman",
+    "theme": "Relationships/Sales",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "10",
+    "title": "The Hard Thing About Hard Things",
+    "author": "Ben Horowitz",
+    "theme": "Start Up",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "11",
+    "title": "Zero to One",
+    "author": "Blake Masters/Peter Thiel",
+    "theme": "Start Up",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "12",
+    "title": "Tao of Leadership",
+    "author": "John Heider",
+    "theme": "Start Up",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "13",
+    "title": "Creation: Life and How to Make It",
+    "author": "Steve Grand",
+    "theme": "Tech Learning",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "14",
+    "title": "Lean Startup",
+    "author": "Eric Reis",
+    "theme": "Tech Learning",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "15",
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki",
+    "theme": "Tech Learning",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "16",
+    "title": "Viral Loop",
+    "author": "Adam L. Penenberg",
+    "theme": "Tech Learning",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "17",
+    "title": "Bringing Down the House",
+    "author": "Ben Mezrich",
+    "theme": "Humor",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "18",
+    "title": "Booky Wook 1/2",
+    "author": "Russell Brand",
+    "theme": "Humor",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "19",
+    "title": "City Boy",
+    "author": "",
+    "theme": "Humor",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "20",
+    "title": "Freakonomics",
+    "author": "Steven D. Levitt & Stephen J. Dubner",
+    "theme": "Humor",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "21",
+    "title": "Superfreakonomics",
+    "author": "Steven D. Levitt & Stephen J. Dubner",
+    "theme": "Humor",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "22",
+    "title": "Fayed",
+    "author": "Tom Bower",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "23",
+    "title": "Branson",
+    "author": "Tom Bower",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "24",
+    "title": "Elon Musk",
+    "author": "Ashlee Vance",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "25",
+    "title": "How Google Works",
+    "author": "Eric Schmidt",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "26",
+    "title": "The Everything Store",
+    "author": "Brad Stone",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "27",
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "28",
+    "title": "Alibaba",
+    "author": "Duncan Clark",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "29",
+    "title": "Decoded",
+    "author": "Jay-Z",
+    "theme": "Biography (Autobiography)",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "30",
+    "title": "Duncan Bannatyne",
+    "author": "",
+    "theme": "Biography (Autobiography)",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "31",
+    "title": "James Caan",
+    "author": "",
+    "theme": "Biography (Autobiography)",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "32",
+    "title": "Stephen Fry",
+    "author": "",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "33",
+    "title": "Shoe Dog",
+    "author": "Phil Knight",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "34",
+    "title": "Pushing the Limits",
+    "author": "Kurt Fearnley",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "35",
+    "title": "Losing My Virginity",
+    "author": "Richard Branson",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "36",
+    "title": "Lessons in Business",
+    "author": "Richard Branson",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "37",
+    "title": "Tools of Titans",
+    "author": "Tim Ferriss",
+    "theme": "Biography",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "38",
+    "title": "The 48 Laws of Power",
+    "author": "Robert Greene",
+    "theme": "Politics/War",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "39",
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "theme": "Politics/War",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
   }
 ]
