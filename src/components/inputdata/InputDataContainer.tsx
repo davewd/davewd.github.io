@@ -1,25 +1,25 @@
-import React, { useState } from 'react';
-import './InputDataContainer.css';
+import React, { useState } from "react";
+import "./InputDataContainer.css";
 
-import booksData from '../../json_data/input_data/books.json';
-import linksData from '../../json_data/input_data/links.json';
-import mediaData from '../../json_data/input_data/media.json';
-import podcastsData from '../../json_data/input_data/podcasts.json';
+import booksData from "../../json_data/input_data/books.json";
+import linksData from "../../json_data/input_data/links.json";
+import mediaData from "../../json_data/input_data/media.json";
+import podcastsData from "../../json_data/input_data/podcasts.json";
 
-type InputDataTab = 'Books' | 'Links' | 'Media' | 'Podcasts';
+type InputDataTab = "Books" | "Links" | "Media" | "Podcasts";
 
 const InputDataContainer: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<InputDataTab>('Books');
+  const [activeTab, setActiveTab] = useState<InputDataTab>("Books");
 
   const renderTabContent = () => {
     switch (activeTab) {
-      case 'Books':
+      case "Books":
         return <BooksTab />;
-      case 'Links':
+      case "Links":
         return <LinksTab />;
-      case 'Media':
+      case "Media":
         return <MediaTab />;
-      case 'Podcasts':
+      case "Podcasts":
         return <PodcastsTab />;
       default:
         return null;
@@ -29,19 +29,19 @@ const InputDataContainer: React.FC = () => {
   return (
     <div className="input-data-container">
       <div className="input-data-tabs">
-        {(['Books', 'Links', 'Media', 'Podcasts'] as InputDataTab[]).map((tab) => (
-          <button
-            key={tab}
-            className={`tab-button ${activeTab === tab ? 'active' : ''}`}
-            onClick={() => setActiveTab(tab)}
-          >
-            {tab}
-          </button>
-        ))}
+        {(["Books", "Podcasts", "Links", "Media"] as InputDataTab[]).map(
+          (tab) => (
+            <button
+              key={tab}
+              className={`tab-button ${activeTab === tab ? "active" : ""}`}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
+          )
+        )}
       </div>
-      <div className="input-data-content">
-        {renderTabContent()}
-      </div>
+      <div className="input-data-content">{renderTabContent()}</div>
     </div>
   );
 };
@@ -92,10 +92,10 @@ const LinksTab: React.FC = () => {
               <td>{link.title}</td>
               <td>{link.description}</td>
               <td>
-                <a 
-                  href={link.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href={link.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
                 >
                   {link.link}
@@ -130,10 +130,10 @@ const MediaTab: React.FC = () => {
               <td>{media.title}</td>
               <td>{media.description}</td>
               <td>
-                <a 
-                  href={media.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href={media.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
                 >
                   {media.link}
@@ -166,10 +166,10 @@ const PodcastsTab: React.FC = () => {
               <td>{podcast.title}</td>
               <td>{podcast.description}</td>
               <td>
-                <a 
-                  href={podcast.link} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href={podcast.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
                 >
                   {podcast.link}
