@@ -1,0 +1,92 @@
+.input-data-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-data-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  border-bottom-color: #007bff;
+  color: #007bff;
+}
+
+.input-data-content {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.input-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed; /* Ensures consistent column widths */
+}
+
+.input-data-table th, 
+.input-data-table td {
+  border: 1px solid #e0e0e0;
+  padding: 12px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.input-data-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.input-data-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.input-data-table tr:hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+/* Specific column width adjustments */
+.input-data-table th:nth-child(1), /* Title */
+.input-data-table td:nth-child(1) {
+  width: 15%;
+}
+
+.input-data-table th:nth-child(2), /* Description */
+.input-data-table td:nth-child(2) {
+  width: 15%;
+}
+
+.input-data-table th:nth-child(3), /* Link */
+.input-data-table td:nth-child(3) {
+  width: 15%;
+}
+
+.input-data-table th:nth-child(4), /* Consumed Date */
+.input-data-table td:nth-child(4) {
+  width: 10%;
+}
+
+.input-data-table th:nth-child(5), /* Overview */
+.input-data-table td:nth-child(5) {
+  width: 45%;
+  white-space: normal;
+  word-wrap: break-word;
+}

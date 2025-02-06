@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "title": "Thinking, Fast and Slow",
+    "author": "Daniel Kahneman",
+    "startDate": "2023-01-15",
+    "finishDate": "2023-03-20"
+  },
+  {
+    "id": "2", 
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt & David Thomas",
+    "startDate": "2022-11-05",
+    "finishDate": "2022-12-10"
+  }
+]

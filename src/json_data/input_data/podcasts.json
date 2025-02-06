@@ -1,0 +1,39 @@
+[
+  {
+    "id": "1",
+    "title": "Hidden Brain",
+    "description": "Science-based insights for health, performance, and life optimization",
+    "link": "https://hiddenbrain.org/",
+    "overview": "In-depth exploration of neuroscience, health, and performance optimization through scientific research and practical insights."
+  },
+  {
+    "id": "2",
+    "title": "15 Minutes with the Boss",
+    "description": "A podcast about success and failure and everything in-between",
+    "link": "https://www.afr.com/podcast/15-minutes-with-the-boss"
+  },
+  {
+    "id": "3",
+    "title": "How I made It",
+    "description": "How Australia’s top entrepreneurs built their fortunes and what they learnt along the way",
+    "link": "https://www.afr.com/podcast/how-i-made-it-inside-the-rich-list"
+  },
+  {
+    "id": "4",
+    "title": "F1: Beyond the Grid",
+    "description": "Formula 1's fastest stars slow down for in-depth interviews",
+    "link": "https://www.formula1.com/en/latest/tags/beyond-the-grid.63HGi6Q0grEg1ToZBtPNQ9?articleFilters=Podcast&page=1"
+  },
+  {
+    "id": "5",
+    "title": "How to be a better Human",
+    "description": "Organizational psychologist Adam Grant takes you inside the minds of some of the world's most unusual professionals to discover the keys to a better work life",
+    "link": "https://podcasts.apple.com/us/podcast/worklife-with-adam-grant/id1346314086"
+  },
+  {
+    "id": "6",
+    "title": "",
+    "description": "",
+    "link": ""
+  }
+]

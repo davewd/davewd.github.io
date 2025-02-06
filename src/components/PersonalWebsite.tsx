@@ -7,6 +7,7 @@ import TimelineContainer from "./timeline/TimelineContainer";
 import NetworkContainer from "./network/NetworkContainer";
 import ValuesContainer from "./values/ValuesContainer";
 import ThoughtsContainer from "./thoughts/ThoughtsContainer";
+import InputDataContainer from "./inputdata/InputDataContainer";
 
 const PersonalWebsite: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -37,6 +38,8 @@ const PersonalWebsite: React.FC = () => {
         return <NetworkContainer />;
       case "thoughts":
         return <ThoughtsContainer activeSectionId={activeSectionId} />;
+      case "input":
+        return <InputDataContainer />;
       default:
         return null;
     }
@@ -146,6 +149,16 @@ const PersonalWebsite: React.FC = () => {
               {activeTab === "thoughts" && (
                 <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gray-900 transition-all duration-200"></div>
               )}
+            </button>
+            <button
+              onClick={() => handleTabClick("input")}
+              className={`px-6 py-3 font-medium transition-all duration-200 relative ${
+                activeTab === "input"
+                  ? "text-gray-900 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gray-900"
+                  : "text-gray-500 hover:text-gray-900"
+              }`}
+            >
+              Input Data
             </button>
           </nav>
         </header>

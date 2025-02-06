@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "title": "Huberman Lab Podcast",
+    "description": "Science-based insights for daily life",
+    "link": "https://hubermanlab.com",
+    "consumedDate": "2024-01-20",
+    "overview": "In-depth exploration of neuroscience, health, and performance optimization through scientific research and practical insights."
+  },
+  {
+    "id": "2", 
+    "title": "Lex Fridman Podcast",
+    "description": "Deep conversations with experts",
+    "link": "https://lexfridman.com/podcast",
+    "consumedDate": "2023-11-30",
+    "overview": "Thought-provoking interviews with leading minds in AI, science, technology, philosophy, and human experience."
+  }
+]

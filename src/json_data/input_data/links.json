@@ -1,0 +1,18 @@
+[
+  {
+    "id": "1",
+    "title": "Codeium AI",
+    "description": "AI-powered coding assistant",
+    "link": "https://codeium.com",
+    "consumedDate": "2024-01-15",
+    "overview": "Revolutionizing coding with AI-assisted development tools and intelligent code completion."
+  },
+  {
+    "id": "2",
+    "title": "React Documentation",
+    "description": "Official React JS documentation",
+    "link": "https://react.dev",
+    "consumedDate": "2023-12-10",
+    "overview": "Comprehensive guide to building modern, interactive web applications using React framework."
+  }
+]
