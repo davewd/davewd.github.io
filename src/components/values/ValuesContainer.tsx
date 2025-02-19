@@ -75,9 +75,9 @@ const ValuesContainer: React.FC = () => {
         </p>
         <br />
         <p>
-          Ultimately I aspire to create automated digital businesses that
-          benefit from quantiative Models, computer science and aim to put data
-          at the heart of decision making.
+          Ultimately I aim to create automated digital businesses that benefit
+          from quantitative Models, computer science and put data at the heart
+          of decision making.
         </p>
       </div>
     </div>
