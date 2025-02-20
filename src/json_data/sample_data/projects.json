@@ -206,6 +206,16 @@
           "text": "Github Repo"
         }
       ]
+    },
+    {
+      "id": "proj-018",
+      "name": "Kitchen Floor",
+      "description": "Re laying the kitchen floor with an inspection hatch, a resin area and multiple inlays to join old to new",
+      "status": "Active",
+      "year_start": 2025,
+      "year_end": 2025,
+      "tags": ["renovations", "wood work"],
+      "links": []
     }
   ]
 }
