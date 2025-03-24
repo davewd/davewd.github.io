@@ -14,5 +14,13 @@
     "link": "https://react.dev",
     "consumedDate": "2023-12-10",
     "overview": "Comprehensive guide to building modern, interactive web applications using React framework."
+  },
+  {
+    "id": "3",
+    "title": "Beginner to Advanced Git",
+    "description": "the most visual and interactive way to learn Git on the web",
+    "link": "https://learngitbranching.js.org/",
+    "consumedDate": "2025-03-24",
+    "overview": ""
   }
 ]
