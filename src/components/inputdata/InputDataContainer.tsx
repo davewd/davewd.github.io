@@ -89,20 +89,22 @@ const BooksTab: React.FC = () => {
 const LinksTab: React.FC = () => {
   return (
     <div className="links-tab">
-      <table className="input-data-table w-full table-fixed">
+      <table className="input-data-table">
         <thead>
           <tr>
-            <th className="w-1/4">Title</th>
-            <th className="w-1/2">Description</th>
-            <th className="w-1/4">Link</th>
-            <th className="w-0">Overview</th>
+            <th className="w-1/5">Title</th>
+            <th className="w-2/5">Description</th>
+            <th className="w-1/5">Link</th>
+            <th className="w-1/5">Overview</th>
           </tr>
         </thead>
         <tbody>
           {linksData.map((link) => (
             <tr key={link.id} className="text-sm">
               <td className="truncate">{link.title}</td>
-              <td className="whitespace-normal break-words">{link.description}</td>
+              <td className="whitespace-normal break-words">
+                {link.description}
+              </td>
               <td className="truncate">
                 <a
                   href={link.link}
@@ -125,20 +127,22 @@ const LinksTab: React.FC = () => {
 const MediaTab: React.FC = () => {
   return (
     <div className="media-tab">
-      <table className="input-data-table w-full table-fixed">
+      <table className="input-data-table">
         <thead>
           <tr>
-            <th className="w-1/4">Title</th>
-            <th className="w-1/2">Description</th>
-            <th className="w-1/4">Link</th>
-            <th className="w-0">Overview</th>
+            <th className="w-1/5">Title</th>
+            <th className="w-2/5">Description</th>
+            <th className="w-1/5">Link</th>
+            <th className="w-1/5">Overview</th>
           </tr>
         </thead>
         <tbody>
           {mediaData.map((media) => (
             <tr key={media.id} className="text-sm">
               <td className="truncate">{media.title}</td>
-              <td className="whitespace-normal break-words">{media.description}</td>
+              <td className="whitespace-normal break-words">
+                {media.description}
+              </td>
               <td className="truncate">
                 <a
                   href={media.link}
@@ -161,19 +165,21 @@ const MediaTab: React.FC = () => {
 const PodcastsTab: React.FC = () => {
   return (
     <div className="podcasts-tab">
-      <table className="input-data-table w-full table-fixed">
+      <table className="input-data-table">
         <thead>
           <tr>
-            <th className="w-1/4">Title</th>
-            <th className="w-1/2">Description</th>
-            <th className="w-1/4">Link</th>
+            <th className="w-1/5">Title</th>
+            <th className="w-3/5">Description</th>
+            <th className="w-1/5">Link</th>
           </tr>
         </thead>
         <tbody>
           {podcastsData.map((podcast) => (
             <tr key={podcast.id} className="text-sm">
               <td className="truncate">{podcast.title}</td>
-              <td className="whitespace-normal break-words">{podcast.description}</td>
+              <td className="whitespace-normal break-words">
+                {podcast.description}
+              </td>
               <td className="truncate">
                 <span className="text-blue-600 hover:underline">
                   {podcast.link}
