@@ -2,6 +2,48 @@ import React, { useState, useEffect } from "react";
 import timelineData from "../../json_data/sample_data/timeline.json";
 import { extractOpenGraphImage } from "../../utils/og-image-extractor";
 import { TimelineEvent } from "../../types";
+import { Link } from "lucide-react";
+
+const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
+  event,
+}) => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
+
+  return (
+    <div className="relative mb-2 rounded-lg overflow-hidden shadow-sm min-h-[200px] bg-gray-50">
+      {isLoading && !hasError && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="animate-pulse flex space-x-4">
+            <div className="rounded-full bg-gray-200 h-10 w-10"></div>
+          </div>
+        </div>
+      )}
+
+      {hasError && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+          <div className="text-gray-400 text-sm">Failed to load preview</div>
+        </div>
+      )}
+
+      {event.ogImage && (
+        <img
+          src={event.ogImage}
+          alt={`Preview for ${event.title}`}
+          className={`w-full object-cover transition-all duration-300 ${
+            isLoading ? "opacity-0" : "opacity-100 hover:scale-105"
+          }`}
+          style={{ minHeight: "200px", maxHeight: "300px" }}
+          onLoad={() => setIsLoading(false)}
+          onError={() => {
+            setIsLoading(false);
+            setHasError(true);
+          }}
+        />
+      )}
+    </div>
+  );
+};
 
 const TimelineContainer: React.FC = () => {
   const [events, setEvents] = useState<TimelineEvent[]>(timelineData.events);
@@ -11,13 +53,12 @@ const TimelineContainer: React.FC = () => {
     const fetchOgImages = async () => {
       const updatedEvents: TimelineEvent[] = await Promise.all(
         events.map(async (event) => {
-          // Only fetch OG image if href exists and ogImage is not already set
           if (event.href && !event.ogImage) {
             try {
               const ogImage = await extractOpenGraphImage(event.href);
               return { ...event, ogImage: ogImage || undefined };
             } catch (error) {
-              console.error('Failed to fetch OG image:', error);
+              console.error("Failed to fetch OG image:", error);
               return event;
             }
           }
@@ -43,23 +84,17 @@ const TimelineContainer: React.FC = () => {
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            {/* Content */}
             <div className="w-5/12">
               <div
                 className={`bg-white p-3 rounded-lg shadow-sm transition-all duration-300 ${
-                  hoveredIndex === index
-                    ? "shadow-lg transform scale-105"
-                    : ""
+                  hoveredIndex === index ? "shadow-lg transform scale-105" : ""
                 }`}
               >
                 <div className="flex justify-between items-start mb-1">
                   <div className="text-sm font-medium text-gray-500">
                     {event.date}
                   </div>
-                  <div
-                    className="text-gray-500"
-                    style={{ fontSize: "1.5em" }}
-                  >
+                  <div className="text-gray-500" style={{ fontSize: "1.5em" }}>
                     {event.location}
                   </div>
                 </div>
@@ -76,19 +111,34 @@ const TimelineContainer: React.FC = () => {
                   </div>
                 </div>
 
-                {event.ogImage && (
-                  <div className="mb-2 rounded-lg overflow-hidden shadow-sm">
-                    <img
-                      src={event.ogImage}
-                      alt={`Open Graph image for ${event.title}`}
-                      className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
+                {event.href && (
+                  <a
+                    href={event.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block hover:opacity-90 transition-opacity"
+                  >
+                    <TimelineImageComponent event={event} />
+                  </a>
                 )}
 
                 <p className="text-sm text-gray-600 mb-2 line-clamp-2 hover:line-clamp-none">
                   {event.description}
                 </p>
+
+                {event.href && (
+                  <div className="flex justify-end mb-2">
+                    <a
+                      href={event.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-400 hover:text-gray-600 transition-colors"
+                      title="Open article"
+                    >
+                      <Link size={16} />
+                    </a>
+                  </div>
+                )}
 
                 <div className="flex flex-wrap gap-1">
                   {event.tags.map((tag, tagIndex) => (
@@ -103,7 +153,6 @@ const TimelineContainer: React.FC = () => {
               </div>
             </div>
 
-            {/* Circle marker */}
             <div className="w-2/12 flex justify-center relative z-10">
               <div
                 className={`w-4 h-4 rounded-full transition-all duration-300 ${
@@ -111,8 +160,7 @@ const TimelineContainer: React.FC = () => {
                 }`}
                 style={{
                   backgroundColor: event.companyColor,
-                  filter:
-                    hoveredIndex === index ? "brightness(110%)" : "none",
+                  filter: hoveredIndex === index ? "brightness(110%)" : "none",
                 }}
               ></div>
             </div>
