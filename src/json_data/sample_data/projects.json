@@ -84,8 +84,8 @@
       "id": "proj-007",
       "name": "fixed wing flight Chassis",
       "description": "Phase one of an efficient flight platform: distance",
-      "status": "Future",
-      "year_start": null,
+      "status": "Active",
+      "year_start": 2025,
       "year_end": null,
       "tags": [],
       "links": []
@@ -154,11 +154,16 @@
       "id": "proj-014",
       "name": "Zygo",
       "description": "",
-      "status": "Future",
-      "year_start": null,
+      "status": "Active",
+      "year_start": 2025,
       "year_end": null,
       "tags": [],
-      "links": []
+      "links": [
+        {
+          "href": "https://www.zygo.app",
+          "text": "Website"
+        }
+      ]
     },
     {
       "id": "proj-015",
