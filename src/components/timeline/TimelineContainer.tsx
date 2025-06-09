@@ -9,10 +9,36 @@ const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
 }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [hasError, setHasError] = useState(false);
+  const [imageUrl, setImageUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    const loadImage = async () => {
+      if (event.ogImage) {
+        setImageUrl(event.ogImage);
+      } else if (event.href) {
+        try {
+          const ogImage = await extractOpenGraphImage(event.href);
+          if (ogImage) {
+            setImageUrl(ogImage);
+          }
+        } catch (error) {
+          console.error("Failed to load OG image:", error);
+          setHasError(true);
+        }
+      }
+      setIsLoading(false);
+    };
+
+    loadImage();
+  }, [event.ogImage, event.href]);
+
+  if (!imageUrl && !isLoading) {
+    return null;
+  }
 
   return (
     <div className="relative mb-2 rounded-lg overflow-hidden shadow-sm min-h-[200px] bg-gray-50">
-      {isLoading && !hasError && (
+      {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="animate-pulse flex space-x-4">
             <div className="rounded-full bg-gray-200 h-10 w-10"></div>
@@ -26,9 +52,9 @@ const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
         </div>
       )}
 
-      {event.ogImage && (
+      {imageUrl && (
         <img
-          src={event.ogImage}
+          src={imageUrl}
           alt={`Preview for ${event.title}`}
           className={`w-full object-cover transition-all duration-300 ${
             isLoading ? "opacity-0" : "opacity-100 hover:scale-105"
@@ -41,6 +67,31 @@ const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
           }}
         />
       )}
+    </div>
+  );
+};
+
+const CompanyLogo: React.FC<{ event: TimelineEvent }> = ({ event }) => {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
+        <span className="text-sm font-medium text-gray-500">
+          {event.company.charAt(0)}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center bg-white rounded-full overflow-hidden">
+      <img
+        src={event.companyLogo}
+        alt={`${event.company} logo`}
+        className="w-6 h-6 object-contain"
+        onError={() => setHasError(true)}
+      />
     </div>
   );
 };
@@ -91,8 +142,11 @@ const TimelineContainer: React.FC = () => {
                 }`}
               >
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
-                  <div className="text-sm font-medium text-gray-500 mb-1 sm:mb-0">
-                    {event.date}
+                  <div className="flex items-center gap-2 mb-1 sm:mb-0">
+                    <CompanyLogo event={event} />
+                    <div className="text-sm font-medium text-gray-500">
+                      {event.date}
+                    </div>
                   </div>
                   <div className="text-gray-500 text-lg sm:text-xl">
                     {event.location}
