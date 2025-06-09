@@ -73,34 +73,34 @@ const TimelineContainer: React.FC = () => {
   }, []);
 
   return (
-    <div className="max-w-5xl mx-auto py-8">
+    <div className="max-w-5xl mx-auto py-4 sm:py-8 px-4">
       <div className="relative">
         {events.map((event: TimelineEvent, index) => (
           <div
             key={index}
-            className={`flex items-center ${
-              index % 2 === 0 ? "flex-row" : "flex-row-reverse"
-            }`}
+            className={`flex flex-col md:flex-row items-center ${
+              index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+            } mb-8 md:mb-0`}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div className="w-5/12">
+            <div className="w-full md:w-5/12 mb-4 md:mb-0">
               <div
-                className={`bg-white p-3 rounded-lg shadow-sm transition-all duration-300 ${
+                className={`bg-white p-3 sm:p-4 rounded-lg shadow-sm transition-all duration-300 ${
                   hoveredIndex === index ? "shadow-lg transform scale-105" : ""
                 }`}
               >
-                <div className="flex justify-between items-start mb-1">
-                  <div className="text-sm font-medium text-gray-500">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
+                  <div className="text-sm font-medium text-gray-500 mb-1 sm:mb-0">
                     {event.date}
                   </div>
-                  <div className="text-gray-500" style={{ fontSize: "1.5em" }}>
+                  <div className="text-gray-500 text-lg sm:text-xl">
                     {event.location}
                   </div>
                 </div>
 
-                <div className="mb-1">
-                  <h3 className="text-lg font-semibold leading-tight">
+                <div className="mb-2">
+                  <h3 className="text-base sm:text-lg font-semibold leading-tight">
                     {event.title}
                   </h3>
                   <div
@@ -153,7 +153,7 @@ const TimelineContainer: React.FC = () => {
               </div>
             </div>
 
-            <div className="w-2/12 flex justify-center relative z-10">
+            <div className="w-0.5 h-8 md:w-2/12 md:h-auto flex justify-center relative z-10">
               <div
                 className={`w-4 h-4 rounded-full transition-all duration-300 ${
                   hoveredIndex === index ? "transform scale-175" : ""

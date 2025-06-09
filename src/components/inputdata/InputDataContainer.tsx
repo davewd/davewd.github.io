@@ -28,12 +28,14 @@ const InputDataContainer: React.FC = () => {
 
   return (
     <div className="input-data-container">
-      <div className="input-data-tabs">
+      <div className="input-data-tabs flex flex-wrap justify-center gap-1 px-2">
         {(["Books", "Podcasts", "Links", "Media"] as InputDataTab[]).map(
           (tab) => (
             <button
               key={tab}
-              className={`tab-button ${activeTab === tab ? "active" : ""}`}
+              className={`tab-button text-sm sm:text-base py-2 px-3 sm:px-4 ${
+                activeTab === tab ? "active" : ""
+              }`}
               onClick={() => setActiveTab(tab)}
             >
               {tab}
