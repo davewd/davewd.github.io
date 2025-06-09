@@ -7,11 +7,6 @@ type TagStyle = {
   text: string;
 };
 
-const getTagStyle = (tag: string): TagStyle => ({
-  background: tag ? "#E5E7EB" : "#D1D5DB",
-  text: "#374151",
-});
-
 const getStatusStyle = (status: string): TagStyle => ({
   background: status ? "#E5E7EB" : "#D1D5DB",
   text: "#374151",
@@ -37,18 +32,9 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
   availableTags,
   availableStatuses,
 }) => {
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const updateSearchParams = (newFilters: typeof filters) => {
-    const params = new URLSearchParams();
-    if (newFilters.search) params.set("search", newFilters.search);
-    newFilters.tags.forEach((tag) => params.append("tags", tag));
-    newFilters.status.forEach((status) => params.append("status", status));
-    setSearchParams(params);
-  };
+  const [searchParams] = useSearchParams();
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newFilters = { ...filters, search: e.target.value };
     onFilterChange("search", e.target.value);
   };
 
@@ -78,10 +64,9 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
   }, [searchParams, onFilterChange]);
 
   return (
-    <div className="space-y-4 sm:space-y-6">
-      {/* Filter Groups */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-        {/* Tags Filter */}
+    <div className="space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {/* Tags */}
         <div className="space-y-2">
           <h3 className="text-sm font-medium text-gray-700 text-center sm:text-left">
             Tags
@@ -106,7 +91,7 @@ const ProjectFilters: React.FC<ProjectFiltersProps> = ({
           </div>
         </div>
 
-        {/* Status Filter */}
+        {/* Status */}
         <div className="space-y-2">
           <h3 className="text-sm font-medium text-gray-700 text-center sm:text-left">
             Status
