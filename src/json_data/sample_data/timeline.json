@@ -85,6 +85,17 @@
       "location": "🇦🇺"
     },
     {
+      "date": "2014",
+      "title": "Vice President - Quant Engineer",
+      "description": "Individual Contributor",
+      "company": "Goldman Sachs",
+      "companyColor": "#6CACE4",
+      "companyLogo": "/src/assets/gs_logo.svg",
+      "tags": ["Equity Portfolio Trading", "Distribution"],
+      "location": "🇬🇧",
+      "href": "https://www.goldmansachs.com/our-firm/history/moments/2014-marquee"
+    },
+    {
       "date": "2007",
       "title": "Analyst - Engineer",
       "description": "Individual Contributor",
