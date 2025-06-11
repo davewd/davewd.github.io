@@ -6,7 +6,7 @@
       "description": "CBA Article",
       "company": "CBA",
       "companyColor": "#FFB700",
-      "companyLogo": "/src/assets/cba_logo.svg",
+      "companyLogo": "./cba_logo.svg",
       "tags": ["Quantitative Analytics", "Corporate Advertising"],
       "location": "🇦🇺",
       "href": "https://www.commbank.com.au/business/brighter-perspectives/how-debt-data-analysis-could-transform-your-cash-flow.html"
@@ -17,7 +17,7 @@
       "description": "CBA Article",
       "company": "CBA",
       "companyColor": "#FFB700",
-      "companyLogo": "/src/assets/cba_logo.svg",
+      "companyLogo": "./cba_logo.svg",
       "tags": ["Quantitative Analytics", "Corporate Advertising"],
       "location": "🇦🇺",
       "href": "https://teamglobalexp.com/blogs/-/blogs/team-global-express-formerly-toll-global-express-has-signed-a-250-million-loan"
@@ -28,7 +28,7 @@
       "description": "CBA Article",
       "company": "CBA",
       "companyColor": "#FFB700",
-      "companyLogo": "/src/assets/cba_logo.svg",
+      "companyLogo": "./cba_logo.svg",
       "tags": ["Quantitative Analytics", "Corporate Advertising"],
       "location": "🇦🇺",
       "href": "https://d3.harvard.edu/platform-rctom/submission/goldman-going-for-gold-through-digital/",
@@ -40,7 +40,7 @@
       "description": "CBA Article",
       "company": "CBA",
       "companyColor": "#FFB700",
-      "companyLogo": "/src/assets/cba_logo.svg",
+      "companyLogo": "./cba_logo.svg",
       "tags": ["Quantitative Analytics", "Corporate Advertising"],
       "location": "🇦🇺",
       "href": "https://www.commbank.com.au/business/brighter-perspectives/why-theres-no-one-size-fits-all-solution-to-business-cash-flow-challenges.html",
@@ -64,7 +64,7 @@
       "description": "Manager of Managers",
       "company": "CBA",
       "companyColor": "#FFB700",
-      "companyLogo": "/src/assets/cba_logo.svg",
+      "companyLogo": "./cba_logo.svg",
       "tags": [
         "Documentary Trade",
         "Guarantees",
@@ -80,7 +80,7 @@
       "description": "Individual Contributor",
       "company": "Goldman Sachs",
       "companyColor": "#6CACE4",
-      "companyLogo": "/src/assets/gs_logo.svg",
+      "companyLogo": "./gs_logo.svg",
       "tags": ["Equity Portfolio Trading", "Distribution"],
       "location": "🇦🇺"
     },
@@ -90,7 +90,7 @@
       "description": "Individual Contributor",
       "company": "Goldman Sachs",
       "companyColor": "#6CACE4",
-      "companyLogo": "/src/assets/gs_logo.svg",
+      "companyLogo": "./gs_logo.svg",
       "tags": ["Equity Portfolio Trading", "Distribution"],
       "location": "🇬🇧",
       "href": "https://www.goldmansachs.com/our-firm/history/moments/2014-marquee"
@@ -101,7 +101,7 @@
       "description": "Individual Contributor",
       "company": "Goldman Sachs",
       "companyColor": "#6CACE4",
-      "companyLogo": "/src/assets/gs_logo.svg",
+      "companyLogo": "./gs_logo.svg",
       "tags": [
         "Equity Finance",
         "Trading Strategies",
