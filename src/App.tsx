@@ -1,13 +1,19 @@
-import './App.css'
-import { BrowserRouter } from 'react-router-dom'
-import PersonalWebsite from './components/PersonalWebsite'
+import React from "react";
+import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
+import PersonalWebsite from "./components/PersonalWebsite";
+import { initializeAnalytics } from "./utils/analytics";
 
 function App() {
+  React.useEffect(() => {
+    initializeAnalytics();
+  }, []);
+
   return (
-    <BrowserRouter>
+    <Router>
       <PersonalWebsite />
-    </BrowserRouter>
-  )
+    </Router>
+  );
 }
 
-export default App
+export default App;

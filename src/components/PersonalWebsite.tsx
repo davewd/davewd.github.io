@@ -8,11 +8,67 @@ import NetworkContainer from "./network/NetworkContainer";
 import ValuesContainer from "./values/ValuesContainer";
 import ThoughtsContainer from "./thoughts/ThoughtsContainer";
 import InputDataContainer from "./inputdata/InputDataContainer";
+import {
+  trackPageView,
+  trackScrollDepth,
+  trackTimeSpent,
+  trackExternalLink,
+  trackEngagementLevel,
+} from "../utils/analytics";
 
 const PersonalWebsite: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeTab = searchParams.get("tab") || "values";
   const activeSectionId = searchParams.get("section") || "";
+  const tabStartTime = React.useRef<number>(Date.now());
+  const lastScrollDepth = React.useRef<number>(0);
+
+  // Track page views and tab changes
+  React.useEffect(() => {
+    trackPageView(activeTab, activeSectionId || undefined);
+  }, [activeTab, activeSectionId]);
+
+  // Track time spent on tabs
+  React.useEffect(() => {
+    tabStartTime.current = Date.now();
+
+    return () => {
+      const timeSpentSeconds = Math.round(
+        (Date.now() - tabStartTime.current) / 1000
+      );
+      trackTimeSpent(activeTab, timeSpentSeconds);
+      trackEngagementLevel(timeSpentSeconds, lastScrollDepth.current);
+    };
+  }, [activeTab]);
+
+  // Track scroll depth
+  React.useEffect(() => {
+    const scrollThresholds = [25, 50, 75, 90];
+
+    const handleScroll = () => {
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+
+      const scrollPercentage = Math.round(
+        (scrollTop / (documentHeight - windowHeight)) * 100
+      );
+
+      scrollThresholds.forEach((threshold) => {
+        if (
+          scrollPercentage >= threshold &&
+          lastScrollDepth.current < threshold
+        ) {
+          trackScrollDepth(threshold, activeTab);
+        }
+      });
+
+      lastScrollDepth.current = scrollPercentage;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [activeTab]);
 
   const handleTabClick = (tab: string, sectionId: string = "") => {
     const params: { tab: string; section?: string } = { tab };
@@ -20,6 +76,10 @@ const PersonalWebsite: React.FC = () => {
       params.section = sectionId;
     }
     setSearchParams(params);
+  };
+
+  const handleExternalLinkClick = (platform: string, url: string) => {
+    trackExternalLink(platform, url);
   };
 
   const renderContent = () => {
@@ -70,6 +130,9 @@ const PersonalWebsite: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="transform hover:scale-150 transition-all duration-300"
+              onClick={() =>
+                handleExternalLinkClick("github", "https://github.com/davewd")
+              }
             >
               <FaGithub className="w-8 h-8 sm:w-12 sm:h-12 text-gray-600 hover:text-gray-900 transition-colors duration-300" />
             </a>
@@ -78,6 +141,12 @@ const PersonalWebsite: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="transform hover:scale-150 transition-all duration-300"
+              onClick={() =>
+                handleExternalLinkClick(
+                  "linkedin",
+                  "https://www.linkedin.com/in/davewd/"
+                )
+              }
             >
               <FaLinkedin className="w-8 h-8 sm:w-12 sm:h-12 text-gray-600 hover:text-gray-900 transition-colors duration-300" />
             </a>
@@ -86,12 +155,24 @@ const PersonalWebsite: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="transform hover:scale-150 transition-all duration-300"
+              onClick={() =>
+                handleExternalLinkClick(
+                  "twitter",
+                  "https://x.com/davedawson_co"
+                )
+              }
             >
               <FaXTwitter className="w-8 h-8 sm:w-12 sm:h-12 text-gray-600 hover:text-gray-900 transition-colors duration-300" />
             </a>
             <a
               href="mailto:davedawson.co@gmail.com?subject=Contacting%20you%20via%20davedawson.co"
               className="transform hover:scale-150 transition-all duration-300"
+              onClick={() =>
+                handleExternalLinkClick(
+                  "email",
+                  "mailto:davedawson.co@gmail.com"
+                )
+              }
             >
               <Mail className="w-8 h-8 sm:w-12 sm:h-12 text-gray-600 hover:text-gray-900 transition-colors duration-300" />
             </a>
