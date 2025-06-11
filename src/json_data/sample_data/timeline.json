@@ -52,7 +52,7 @@
       "description": "CBA Article",
       "company": "CBA",
       "companyColor": "#FFB700",
-      "companyLogo": "/src/assets/cba_logo.svg",
+      "companyLogo": "./cba_logo.svg",
       "tags": ["Quantitative Analytics", "Corporate Advertising"],
       "location": "🇦🇺",
       "href": "https://www.commbank.com.au/articles/business/national-resources-case-study.html",
