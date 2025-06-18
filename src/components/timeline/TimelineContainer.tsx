@@ -4,6 +4,24 @@ import { extractOpenGraphImage } from "../../utils/og-image-extractor";
 import { TimelineEvent } from "../../types";
 import { Link } from "lucide-react";
 
+// Import all images statically
+import gsContentStream from "../../assets/gs_content_stream.png";
+import gsRtom from "../../assets/gs_rtom.png";
+import cbaLogo from "../../assets/cba_logo.svg";
+import gsLogo from "../../assets/gs_logo.svg";
+
+// Map of image paths to their imported modules
+const imageMap: { [key: string]: string } = {
+  "gs_content_stream.png": gsContentStream,
+  "gs_rtom.png": gsRtom,
+  "./gs_content_stream.png": gsContentStream,
+  "./gs_rtom.png": gsRtom,
+  "./cba_logo.svg": cbaLogo,
+  "./gs_logo.svg": gsLogo,
+  "cba_logo.svg": cbaLogo,
+  "gs_logo.svg": gsLogo,
+};
+
 const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
   event,
 }) => {
@@ -13,10 +31,22 @@ const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
 
   useEffect(() => {
     const loadImage = async () => {
-      if (event.ogImage) {
+      if (event.image) {
+        // Handle local image from assets
+        const imagePath = event.image;
+        const importedImage = imageMap[imagePath];
+        if (importedImage) {
+          setImageUrl(importedImage);
+        } else {
+          console.error("Image not found in assets:", imagePath);
+          setHasError(true);
+        }
+      } else if (event.ogImage) {
+        // Handle explicit OG image URL
         setImageUrl(event.ogImage);
       } else if (event.href) {
         try {
+          // Try to fetch OG image from URL
           const ogImage = await extractOpenGraphImage(event.href);
           if (ogImage) {
             setImageUrl(ogImage);
@@ -30,7 +60,7 @@ const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
     };
 
     loadImage();
-  }, [event.ogImage, event.href]);
+  }, [event.image, event.ogImage, event.href]);
 
   if (!imageUrl && !isLoading) {
     return null;
@@ -73,8 +103,9 @@ const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
 
 const CompanyLogo: React.FC<{ event: TimelineEvent }> = ({ event }) => {
   const [hasError, setHasError] = useState(false);
+  const logoUrl = imageMap[event.companyLogo];
 
-  if (hasError) {
+  if (hasError || !logoUrl) {
     return (
       <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center flex-shrink-0">
         <span className="text-sm font-medium text-gray-500">
@@ -87,7 +118,7 @@ const CompanyLogo: React.FC<{ event: TimelineEvent }> = ({ event }) => {
   return (
     <div className="w-8 h-8 flex-shrink-0 flex items-center justify-center bg-white rounded-full overflow-hidden">
       <img
-        src={event.companyLogo}
+        src={logoUrl}
         alt={`${event.company} logo`}
         className="w-6 h-6 object-contain"
         onError={() => setHasError(true)}
@@ -165,15 +196,20 @@ const TimelineContainer: React.FC = () => {
                   </div>
                 </div>
 
-                {event.href && (
-                  <a
-                    href={event.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block hover:opacity-90 transition-opacity"
-                  >
-                    <TimelineImageComponent event={event} />
-                  </a>
+                {(event.href || event.image) && (
+                  <div className="block hover:opacity-90 transition-opacity">
+                    {event.href ? (
+                      <a
+                        href={event.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <TimelineImageComponent event={event} />
+                      </a>
+                    ) : (
+                      <TimelineImageComponent event={event} />
+                    )}
+                  </div>
                 )}
 
                 <p className="text-sm text-gray-600 mb-2 line-clamp-2 hover:line-clamp-none">

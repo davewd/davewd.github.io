@@ -51,17 +51,6 @@ export interface TimelineEvent {
   tags: string[];
   href?: string;
   ogImage?: string;
+  image?: string;
 }
 
-export interface TimelineEvent {
-  date: string;
-  title: string;
-  description: string;
-  company: string;
-  companyColor: string;
-  companyLogo: string;
-  location: string;
-  tags: string[];
-  href?: string;
-  ogImage?: string;
-}
