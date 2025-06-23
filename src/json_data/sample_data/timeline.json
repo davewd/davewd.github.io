@@ -3,13 +3,14 @@
     {
       "date": "2025",
       "title": "Brighter Perspectives - Debt data transforming cash flow",
-      "description": "CBA Article",
+      "description": "CommBank is applying data science and analytics to clients’ receivables to help them secure more financing and better manage their liquidity.",
       "company": "CBA",
       "companyColor": "#FFB700",
       "companyLogo": "cba_logo.svg",
       "tags": ["Quantitative Analytics", "Corporate Advertising"],
       "location": "🇦🇺",
-      "href": "https://www.commbank.com.au/business/brighter-perspectives/how-debt-data-analysis-could-transform-your-cash-flow.html"
+      "href": "https://www.commbank.com.au/business/brighter-perspectives/how-debt-data-analysis-could-transform-your-cash-flow.html",
+      "image": "brighter-debt.jpeg"
     },
     {
       "date": "2023",
@@ -21,7 +22,7 @@
       "tags": ["Quantitative Analytics", "Corporate Advertising"],
       "location": "🇦🇺",
       "href": "https://www.commbank.com.au/articles/business/national-resources-case-study.html",
-      "ogImage": ""
+      "image": "natres.jpeg"
     },
     {
       "date": "2023",
@@ -36,14 +37,14 @@
     {
       "date": "2023",
       "title": "TGE - AU$250M Structured Trade Facility",
-      "description": "Lead digital & Risk integraiton securing TGE deal within CBA",
+      "description": "\"We’re pleased to support TGE’s continued transformation through the provision of this loan facility, which demonstrates CBA’s structuring capability and supply chains expertise\"",
       "company": "CBA",
       "companyColor": "#FFB700",
       "companyLogo": "cba_logo.svg",
       "tags": ["Quantitative Analytics", "Corporate Advertising"],
       "location": "🇦🇺",
-      "href": "https://teamglobalexp.com/blogs/-/blogs/team-global-express-formerly-toll-global-express-has-signed-a-250-million-loan",
-      "ogImage": "https://teamglobalexp.com/blogs/-/blogs/team-global-express-formerly-toll-global-express-has-signed-a-250-million-loan"
+      "image": "tge.png",
+      "href": "https://teamglobalexp.com/blogs/-/blogs/team-global-express-formerly-toll-global-express-has-signed-a-250-million-loan"
     },
     {
       "date": "2021",
