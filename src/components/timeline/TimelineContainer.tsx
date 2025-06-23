@@ -12,6 +12,7 @@ import gsLogo from "../../assets/gs_logo.svg";
 import tge from "../../assets/tge.png";
 import nationalResources from "../../assets/natres.jpeg";
 import brighterDebt from "../../assets/brighter-debt.jpeg";
+import strader from "../../assets/strader.jpg";
 
 // Map of image paths to their imported modules
 const imageMap: { [key: string]: string } = {
@@ -26,6 +27,7 @@ const imageMap: { [key: string]: string } = {
   "tge.png": tge,
   "natres.jpeg": nationalResources,
   "brighter-debt.jpeg": brighterDebt,
+  "strader.jpg": strader,
 };
 
 const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
