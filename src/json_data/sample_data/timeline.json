@@ -9,24 +9,12 @@
       "companyLogo": "cba_logo.svg",
       "tags": ["Quantitative Analytics", "Corporate Advertising"],
       "location": "🇦🇺",
-
       "href": "https://www.commbank.com.au/business/brighter-perspectives/how-debt-data-analysis-could-transform-your-cash-flow.html"
-    },
-    {
-      "date": "2025",
-      "title": "Brighter Perspectives - Debt data transforming cash flow",
-      "description": "CBA Article",
-      "company": "CBA",
-      "companyColor": "#FFB700",
-      "companyLogo": "cba_logo.svg",
-      "tags": ["Quantitative Analytics", "Corporate Advertising"],
-      "location": "🇦🇺",
-      "href": "https://teamglobalexp.com/blogs/-/blogs/team-global-express-formerly-toll-global-express-has-signed-a-250-million-loan"
     },
     {
       "date": "2023",
       "title": "National Resources - case study",
-      "description": "Inbstirtutional software leveraged by Large business customers to manage their working capital",
+      "description": "Institutional software leveraged by Large business customers to manage their working capital",
       "company": "CBA",
       "companyColor": "#FFB700",
       "companyLogo": "cba_logo.svg",
@@ -43,9 +31,7 @@
       "companyColor": "#FFB700",
       "companyLogo": "cba_logo.svg",
       "tags": ["Quantitative Analytics", "Corporate Advertising"],
-      "location": "🇦🇺",
-      "href": "https://www.commbank.com.au/articles/business/national-resources-case-study.html",
-      "ogImage": ""
+      "location": "🇦🇺"
     },
     {
       "date": "2023",
