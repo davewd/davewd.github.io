@@ -3,7 +3,7 @@
     {
       "date": "2025",
       "title": "Brighter Perspectives - Debt data transforming cash flow",
-      "description": "CommBank is applying data science and analytics to clients’ receivables to help them secure more financing and better manage their liquidity.",
+      "description": "CommBank is applying data science and analytics to clients' receivables to help them secure more financing and better manage their liquidity.",
       "company": "CBA",
       "companyColor": "#FFB700",
       "companyLogo": "cba_logo.svg",
@@ -37,7 +37,7 @@
     {
       "date": "2022",
       "title": "TGE - AU$250M Structured Trade Facility",
-      "description": "\"We’re pleased to support TGE’s continued transformation through the provision of this loan facility, which demonstrates CBA’s structuring capability and supply chains expertise\"",
+      "description": "\"We're pleased to support TGE's continued transformation through the provision of this loan facility, which demonstrates CBA's structuring capability and supply chains expertise\"",
       "company": "CBA",
       "companyColor": "#FFB700",
       "companyLogo": "cba_logo.svg",
@@ -134,6 +134,30 @@
         "Dividend Estimation"
       ],
       "location": "🇬🇧"
+    },
+    {
+      "date": "2016",
+      "title": "AWEI Platinum Status for LGBTI Inclusion",
+      "description": "Goldman Sachs achieved Platinum Status in the Australian Workplace Equality Index (AWEI), recognizing significant achievements in LGBTI workplace inclusion.",
+      "company": "Goldman Sachs",
+      "companyColor": "#6CACE4",
+      "companyLogo": "gs_logo.svg",
+      "tags": ["Diversity", "Inclusion", "LGBTI", "Award", "AWEI"],
+      "location": "🇦🇺",
+      "href": "https://www.pid-awei.com.au/content/uploads/2017/05/Pride-in-Diversity-Two-Page-Report_Final_Goldman-Sachs.pdf",
+      "image": "AWEI.png"
+    },
+    {
+      "date": "2016-09-11",
+      "title": "Sydney Fintech Hackathon Winners",
+      "description": "Winners of the Sydney Fintech Hackathon, showcasing innovation in financial technology.",
+      "company": "Sydney Fintech Hackathon",
+      "companyColor": "#1E90FF",
+      "companyLogo": "",
+      "tags": ["Fintech", "Hackathon", "Innovation", "Award"],
+      "location": "🇦🇺",
+      "href": "https://startupnews.com.au/news/sydney-fintech-startup-weekend-recap/",
+      "image": "fintech.png"
     }
   ]
 }

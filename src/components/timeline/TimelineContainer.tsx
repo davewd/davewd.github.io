@@ -13,6 +13,8 @@ import tge from "../../assets/tge.png";
 import nationalResources from "../../assets/natres.jpeg";
 import brighterDebt from "../../assets/brighter-debt.jpeg";
 import strader from "../../assets/strader.jpg";
+import AWEI from "../../assets/AWEI.png";
+import fintech from "../../assets/fintech.png";
 
 // Map of image paths to their imported modules
 const imageMap: { [key: string]: string } = {
@@ -28,6 +30,8 @@ const imageMap: { [key: string]: string } = {
   "natres.jpeg": nationalResources,
   "brighter-debt.jpeg": brighterDebt,
   "strader.jpg": strader,
+  "AWEI.png": AWEI,
+  "fintech.png": fintech,
 };
 
 const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
@@ -135,8 +139,19 @@ const CompanyLogo: React.FC<{ event: TimelineEvent }> = ({ event }) => {
   );
 };
 
+// Add this utility function above the TimelineContainer component
+function sortEventsByDate(events: TimelineEvent[]) {
+  return [...events].sort((a, b) => {
+    const dateA = new Date(a.date).getTime();
+    const dateB = new Date(b.date).getTime();
+    return dateB - dateA; // Descending (most recent first)
+  });
+}
+
 const TimelineContainer: React.FC = () => {
-  const [events, setEvents] = useState<TimelineEvent[]>(timelineData.events);
+  const [events, setEvents] = useState<TimelineEvent[]>(
+    sortEventsByDate(timelineData.events)
+  );
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -156,7 +171,7 @@ const TimelineContainer: React.FC = () => {
         })
       );
 
-      setEvents(updatedEvents);
+      setEvents(sortEventsByDate(updatedEvents));
     };
 
     fetchOgImages();
