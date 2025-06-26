@@ -22,5 +22,13 @@
     "link": "https://learngitbranching.js.org/",
     "consumedDate": "2025-03-24",
     "overview": ""
+  },
+  {
+    "id": "4",
+    "title": "OpenGraph.xyz",
+    "description": "Preview and generate Open Graph meta tags for your website",
+    "link": "https://www.opengraph.xyz/",
+    "consumedDate": "2025-06-11",
+    "overview": "A free tool to generate and preview Open Graph meta tags, and check how your website appears on social media."
   }
 ]

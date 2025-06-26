@@ -153,7 +153,7 @@
     {
       "id": "proj-014",
       "name": "Zygo",
-      "description": "",
+      "description": "enabling families to grow together",
       "status": "Active",
       "year_start": 2025,
       "year_end": null,
@@ -221,6 +221,21 @@
       "year_end": 2025,
       "tags": ["renovations", "wood work"],
       "links": []
+    },
+    {
+      "id": "proj-019",
+      "name": "Cocode Ninja",
+      "description": "Forget Low-Code. Co-Code - An AI Collaborative coding platform",
+      "status": "Active",
+      "year_start": 2025,
+      "year_end": null,
+      "tags": ["web", "collaboration", "editor"],
+      "links": [
+        {
+          "href": "https://www.cocode.ninja",
+          "text": "Website"
+        }
+      ]
     }
   ]
 }
