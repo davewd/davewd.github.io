@@ -137,6 +137,27 @@
       "location": "🇬🇧"
     },
     {
+      "date": "2007-05",
+      "title": "Sports Personality of the Year",
+      "description": "Won Sports Personality of the Year award at Southampton University, recognizing outstanding achievements in sports and leadership.",
+      "company": "Southampton University",
+      "companyColor": "#1E4D8C",
+      "companyLogo": "soton_transparent.png",
+      "tags": ["Sports", "Award", "Leadership", "University"],
+      "location": "🇬🇧"
+    },
+    {
+      "date": "2008",
+      "title": "UK IronMan Triathlon",
+      "description": " IRONMAN was conceived by John and Judy Collins in 1978, it combined three of Hawaii's most challenging endurance events, a feat that seemed impossible",
+      "company": "Ironman UK",
+      "companyColor": "#DC143C",
+      "companyLogo": "ironman_logo.png",
+      "tags": ["Sport", "Endurance", "Triathlon"],
+      "location": "🇬🇧",
+      "image": "ironman_dd.jpg"
+    },
+    {
       "date": "2016",
       "title": "AWEI Platinum Status for LGBTI Inclusion",
       "description": "Goldman Sachs achieved Platinum Status in the Australian Workplace Equality Index (AWEI), recognizing significant achievements in LGBTI workplace inclusion.",

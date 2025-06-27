@@ -16,6 +16,9 @@ import strader from "../../assets/strader.jpg";
 import AWEI from "../../assets/AWEI.png";
 import fintech from "../../assets/fintech.png";
 import MD from "../../assets/MD.jpeg";
+import soton from "../../assets/soton_transparent.png";
+import ironman from "../../assets/ironman_dd.jpg";
+import ironmanLogo from "../../assets/ironman_logo.png";
 
 // Map of image paths to their imported modules
 const imageMap: { [key: string]: string } = {
@@ -34,6 +37,9 @@ const imageMap: { [key: string]: string } = {
   "AWEI.png": AWEI,
   "fintech.png": fintech,
   "MD.jpeg": MD,
+  "soton_transparent.png": soton,
+  "ironman_dd.jpg": ironman,
+  "ironman_logo.png": ironmanLogo,
 };
 
 const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
