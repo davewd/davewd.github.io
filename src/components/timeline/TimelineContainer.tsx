@@ -15,6 +15,7 @@ import brighterDebt from "../../assets/brighter-debt.jpeg";
 import strader from "../../assets/strader.jpg";
 import AWEI from "../../assets/AWEI.png";
 import fintech from "../../assets/fintech.png";
+import MD from "../../assets/MD.jpeg";
 
 // Map of image paths to their imported modules
 const imageMap: { [key: string]: string } = {
@@ -32,6 +33,7 @@ const imageMap: { [key: string]: string } = {
   "strader.jpg": strader,
   "AWEI.png": AWEI,
   "fintech.png": fintech,
+  "MD.jpeg": MD,
 };
 
 const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
