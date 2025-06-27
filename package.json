@@ -6,7 +6,9 @@
   "homepage": "https://davedawon.co",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --cname www.davedawson.co",
+    "deploy:www": "gh-pages -d dist --cname www.davedawson.co",
+    "deploy:dd": "gh-pages -d dist --cname www.davedawson.co",
+    "deploy": "npm run deploy:www && npm run deploy:dd",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
