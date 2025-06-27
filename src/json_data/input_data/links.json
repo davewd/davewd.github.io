@@ -30,5 +30,13 @@
     "link": "https://www.opengraph.xyz/",
     "consumedDate": "2025-06-11",
     "overview": "A free tool to generate and preview Open Graph meta tags, and check how your website appears on social media."
+  },
+  {
+    "id": "5",
+    "title": "Regex101",
+    "description": "Online regex tester and debugger for multiple languages.",
+    "link": "https://regex101.com/",
+    "consumedDate": "2025-06-17",
+    "overview": "A powerful online tool for creating, testing, and debugging regular expressions with real-time explanations and support for multiple regex flavors."
   }
 ]
