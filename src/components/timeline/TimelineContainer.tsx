@@ -19,6 +19,7 @@ import MD from "../../assets/MD.jpeg";
 import soton from "../../assets/soton_transparent.png";
 import ironman from "../../assets/ironman_dd.jpg";
 import ironmanLogo from "../../assets/ironman_logo.png";
+import ddBanner from "../../assets/dd_banner.jpg";
 
 // Map of image paths to their imported modules
 const imageMap: { [key: string]: string } = {
@@ -40,6 +41,7 @@ const imageMap: { [key: string]: string } = {
   "soton_transparent.png": soton,
   "ironman_dd.jpg": ironman,
   "ironman_logo.png": ironmanLogo,
+  "dd_banner.jpg": ddBanner,
 };
 
 const TimelineImageComponent: React.FC<{ event: TimelineEvent }> = ({
