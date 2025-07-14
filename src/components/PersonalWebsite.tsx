@@ -120,8 +120,8 @@ const PersonalWebsite: React.FC = () => {
             Dave Dawson
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 font-light px-4">
-            Quantitative engineer. Team coach. Relentless Growth through
-            Automation
+            Quantitative engineer. Team coach. Relentless growth through
+            automation.
           </p>
 
           <div className="flex justify-center space-x-8 sm:space-x-16 mb-8 px-4 w-full max-w-3xl mx-auto">
