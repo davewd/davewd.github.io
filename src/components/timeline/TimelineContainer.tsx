@@ -193,17 +193,27 @@ const TimelineContainer: React.FC = () => {
         {events.map((event: TimelineEvent, index) => (
           <div
             key={index}
-            className={`flex flex-col md:flex-row items-center ${
+            className={`flex flex-col md:flex-row items-center relative ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            } mb-8 md:mb-0`}
+            }`}
+            style={{
+              marginTop: index === 0 ? "0" : "-75px",
+              zIndex: events.length - index,
+            }}
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
             <div className="w-full md:w-5/12 mb-4 md:mb-0">
               <div
                 className={`bg-white p-3 sm:p-4 rounded-lg shadow-sm transition-all duration-300 ${
-                  hoveredIndex === index ? "shadow-lg transform scale-105" : ""
+                  hoveredIndex === index
+                    ? "shadow-lg transform scale-105 z-50"
+                    : ""
                 }`}
+                style={{
+                  position: "relative",
+                  zIndex: hoveredIndex === index ? 1000 : events.length - index,
+                }}
               >
                 <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1">
                   <div className="flex items-center gap-2 mb-1 sm:mb-0">
