@@ -195,9 +195,8 @@ const TimelineContainer: React.FC = () => {
             key={index}
             className={`flex flex-col md:flex-row items-center relative ${
               index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-            }`}
+            } ${index === 0 ? "mt-0" : "mt-4 md:-mt-20"} mb-4 md:mb-0`}
             style={{
-              marginTop: index === 0 ? "0" : "-75px",
               zIndex: events.length - index,
             }}
             onMouseEnter={() => setHoveredIndex(index)}
