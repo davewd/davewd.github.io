@@ -38,5 +38,13 @@
     "link": "https://regex101.com/",
     "consumedDate": "2025-06-17",
     "overview": "A powerful online tool for creating, testing, and debugging regular expressions with real-time explanations and support for multiple regex flavors."
+  },
+  {
+    "id": "6",
+    "title": "Easing Functions Cheat Sheet",
+    "description": "Comprehensive reference for CSS and JavaScript easing functions",
+    "link": "https://easings.net/",
+    "consumedDate": "2025-01-27",
+    "overview": "A complete cheat sheet for easing functions with visual examples, CSS implementations, and TypeScript code snippets for smooth animations and transitions."
   }
 ]
