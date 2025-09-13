@@ -46,5 +46,13 @@
     "link": "https://easings.net/",
     "consumedDate": "2025-01-27",
     "overview": "A complete cheat sheet for easing functions with visual examples, CSS implementations, and TypeScript code snippets for smooth animations and transitions."
+  },
+  {
+    "id": "7",
+    "title": "Epoch Converter",
+    "description": "Epoch & Unix timestamp conversion tools",
+    "link": "https://www.epochconverter.com/",
+    "consumedDate": "2025-09-10",
+    "overview": "Convert Unix timestamps to human-readable dates and back; supports seconds, milliseconds, microseconds, and nanoseconds, plus handy code examples in many languages."
   }
 ]
