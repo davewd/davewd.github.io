@@ -348,7 +348,7 @@
     "theme": "Marketing",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "41",
@@ -357,7 +357,7 @@
     "theme": "Business",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "42",
@@ -366,7 +366,7 @@
     "theme": "Sales",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "43",
@@ -375,7 +375,7 @@
     "theme": "Innovation",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "44",
@@ -384,7 +384,7 @@
     "theme": "Technology",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "45",
@@ -393,7 +393,7 @@
     "theme": "Politics",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "46",
@@ -402,7 +402,7 @@
     "theme": "History",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "47",
@@ -411,7 +411,7 @@
     "theme": "History",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "48",
@@ -420,7 +420,7 @@
     "theme": "Politics",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "49",
@@ -429,7 +429,7 @@
     "theme": "Marketing",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "50",
@@ -438,7 +438,7 @@
     "theme": "Technology",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "51",
@@ -447,7 +447,7 @@
     "theme": "Finance",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "52",
@@ -456,7 +456,7 @@
     "theme": "Business",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
   },
   {
     "id": "53",
@@ -465,6 +465,33 @@
     "theme": "Business",
     "startDate": "",
     "finishDate": "",
-    "status": "To Read"
+    "status": "Complete"
+  },
+  {
+    "id": "54",
+    "title": "The Brain That Changes Itself",
+    "author": "Norman Doidge",
+    "theme": "Psychology",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "55",
+    "title": "Call Sign Chaos",
+    "author": "Jim Mattis",
+    "theme": "Leadership",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
+  },
+  {
+    "id": "56",
+    "title": "Daring Greatly",
+    "author": "Brené Brown",
+    "theme": "Personal Development",
+    "startDate": "",
+    "finishDate": "",
+    "status": "Complete"
   }
 ]

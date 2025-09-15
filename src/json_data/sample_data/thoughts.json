@@ -2,33 +2,45 @@
   "thoughts": [
     {
       "id": "thoughts-001",
-      "title": "Future Musing Space",
+      "title": "Tech & Innovation",
       "sections": [
         {
           "id": "section-001",
-          "title": "Placeholder 1",
-          "content": ""
+          "title": "The Future of AI in Finance",
+          "content": "Exploring how artificial intelligence is transforming the financial services industry, from algorithmic trading to personalized banking experiences.",
+          "mediumUrl": "https://medium.com/@yourusername/the-future-of-ai-in-finance",
+          "publishedDate": "2024-01-15",
+          "readTime": "5 min"
         },
         {
           "id": "section-002",
-          "title": "Placeholder 2",
-          "content": ""
+          "title": "Building Scalable Systems",
+          "content": "Lessons learned from architecting distributed systems that can handle millions of users while maintaining performance and reliability.",
+          "mediumUrl": "https://medium.com/@yourusername/building-scalable-systems",
+          "publishedDate": "2024-02-20",
+          "readTime": "8 min"
         }
       ]
     },
     {
       "id": "thoughts-002",
-      "title": "Thought 2",
+      "title": "Leadership & Growth",
       "sections": [
         {
-          "id": "section-001",
-          "title": "Placeholder 1",
-          "content": ""
+          "id": "section-003",
+          "title": "Leading Remote Teams",
+          "content": "Strategies for building strong remote teams and maintaining culture in a distributed work environment.",
+          "mediumUrl": "https://medium.com/@yourusername/leading-remote-teams",
+          "publishedDate": "2024-03-10",
+          "readTime": "6 min"
         },
         {
-          "id": "section-002",
-          "title": "Placeholder 2",
-          "content": ""
+          "id": "section-004",
+          "title": "Personal Development",
+          "content": "Reflections on continuous learning and the importance of stepping outside your comfort zone.",
+          "mediumUrl": "https://medium.com/@yourusername/personal-development",
+          "publishedDate": "2024-04-05",
+          "readTime": "4 min"
         }
       ]
     }
