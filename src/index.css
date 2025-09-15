@@ -7,3 +7,80 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 }
+
+@layer components {
+  /* Medium content styling */
+  .medium-content {
+    @apply text-gray-700 leading-relaxed text-left;
+  }
+  
+  .medium-content h1,
+  .medium-content h2,
+  .medium-content h3,
+  .medium-content h4,
+  .medium-content h5,
+  .medium-content h6 {
+    @apply font-bold text-gray-900 mt-6 mb-3;
+  }
+  
+  .medium-content h1 {
+    @apply text-2xl;
+  }
+  
+  .medium-content h2 {
+    @apply text-xl;
+  }
+  
+  .medium-content h3 {
+    @apply text-lg;
+  }
+  
+  .medium-content p {
+    @apply mb-4;
+  }
+  
+  .medium-content blockquote {
+    @apply border-l-4 border-green-500 pl-4 italic my-4 text-gray-600;
+  }
+  
+  .medium-content ul,
+  .medium-content ol {
+    @apply mb-4 pl-6;
+  }
+  
+  .medium-content li {
+    @apply mb-2;
+  }
+  
+  .medium-content img {
+    @apply max-w-full h-auto rounded-lg my-4;
+  }
+  
+  .medium-content figure {
+    @apply my-6;
+  }
+  
+  .medium-content figcaption {
+    @apply text-sm text-gray-500 italic mt-2;
+  }
+  
+  .medium-content a {
+    @apply text-green-600 hover:text-green-700 underline;
+  }
+  
+  .medium-content strong {
+    @apply font-semibold;
+  }
+  
+  .medium-content code {
+    @apply bg-gray-100 px-1 py-0.5 rounded text-sm font-mono;
+  }
+  
+  .medium-content pre {
+    @apply bg-gray-100 p-4 rounded-lg overflow-x-auto my-4;
+  }
+  
+  .medium-content pre code {
+    @apply bg-transparent p-0;
+  }
+}
