@@ -116,7 +116,7 @@ const PersonalWebsite: React.FC = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <h1 className="text-5xl sm:text-6xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
+          <h1 className="text-5xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
             Dave Dawson
           </h1>
           <br />
