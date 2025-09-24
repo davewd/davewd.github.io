@@ -116,14 +116,20 @@ const PersonalWebsite: React.FC = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
+          <h1 className="text-5xl sm:text-6xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
             Dave Dawson
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 font-light px-4">
-            Product Manager. Quantitative engineer. Team coach. Relentless
-            growth through automation.
-          </p>
+          <br />
 
+          <p className="text-2xl sm:text-2xl text-gray-600 mb-6 sm:mb-8 font-light px-4">
+            Product Manager. Quantitative engineer. Team coach. Relentless
+            growth strategist.
+          </p>
+          <p className="text-medium sm:text-medium text-gray-700 mb-2 sm:mb-3 font-medium px-4">
+            Digital Transformation & Trading Executive | Global Investment
+            Banking
+          </p>
+          <br />
           <div className="flex justify-center space-x-8 sm:space-x-16 mb-8 px-4 w-full max-w-3xl mx-auto">
             <a
               href="https://github.com/davewd"
