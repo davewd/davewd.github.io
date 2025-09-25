@@ -236,6 +236,19 @@
           "text": "Website"
         }
       ]
+    },
+    {
+      "id": "proj-020",
+      "name": "shelly",
+      "description": "Transform commands into regular expressions. Improve Vibe Coding productivity by analyzing terminal commands and creating auto-approve/deny lists for your settings.",
+      "status": "Active",
+      "year_start": 2025,
+      "year_end": null,
+      "tags": ["cli", "productivity", "automation"],
+      "links": [
+        { "href": "https://github.com/davewd/shelly", "text": "Github Repo" },
+        { "href": "https://www.davedawson.co", "text": "Website (tbd)" }
+      ]
     }
   ]
 }
