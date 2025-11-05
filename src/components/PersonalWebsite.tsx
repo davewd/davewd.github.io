@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { Mail } from "lucide-react";
+import { SiPrintables } from "@icons-pack/react-simple-icons";
 import { useSearchParams } from "react-router-dom";
 import ProjectsContainer from "./projects/ProjectsContainer";
 import TimelineContainer from "./timeline/TimelineContainer";
@@ -181,6 +182,20 @@ const PersonalWebsite: React.FC = () => {
               }
             >
               <Mail className="w-8 h-8 sm:w-12 sm:h-12 text-gray-600 hover:text-gray-900 transition-colors duration-300" />
+            </a>
+            <a
+              href="https://www.printables.com/@davewd_2380122"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transform hover:scale-150 transition-all duration-300"
+              onClick={() =>
+                handleExternalLinkClick(
+                  "printables",
+                  "https://www.printables.com/@davewd_2380122"
+                )
+              }
+            >
+              <SiPrintables className="w-8 h-8 sm:w-12 sm:h-12 text-gray-600 hover:text-gray-900 transition-colors duration-300" />
             </a>
           </div>
 
