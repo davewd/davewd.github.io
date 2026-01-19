@@ -7,19 +7,19 @@
       "company": "CBA",
       "companyColor": "#FFB700",
       "companyLogo": "cba_logo.svg",
-      "tags": ["Quantitative Analytics", "Corporate Advertising"],
+      "tags": ["Data Analytics", "Receivables Finance"],
       "location": "🇦🇺",
       "href": "https://www.commbank.com.au/business/brighter-perspectives/how-debt-data-analysis-could-transform-your-cash-flow.html",
       "image": "brighter-debt.jpeg"
     },
     {
       "date": "2023",
-      "title": "National Resources - case study",
+      "title": "Natural Resources - case study",
       "description": "Institutional software leveraged by Large business customers to manage their working capital",
       "company": "CBA",
       "companyColor": "#FFB700",
       "companyLogo": "cba_logo.svg",
-      "tags": ["Quantitative Analytics", "Corporate Advertising"],
+      "tags": ["Supply Chain Finance", "Working Capital"],
       "location": "🇦🇺",
       "href": "https://www.commbank.com.au/articles/business/national-resources-case-study.html",
       "image": "natres.jpeg"
@@ -31,7 +31,7 @@
       "company": "CBA",
       "companyColor": "#FFB700",
       "companyLogo": "cba_logo.svg",
-      "tags": ["Quantitative Analytics", "Corporate Advertising"],
+      "tags": ["Leadership", "Management"],
       "location": "🇦🇺",
       "image": "MD.jpeg"
     },
@@ -42,7 +42,7 @@
       "company": "CBA",
       "companyColor": "#FFB700",
       "companyLogo": "cba_logo.svg",
-      "tags": ["Quantitative Analytics", "Corporate Advertising"],
+      "tags": ["Structured Trade", "Supply Chain Finance"],
       "location": "🇦🇺",
       "image": "tge.png",
       "href": "https://teamglobalexp.com/blogs/-/blogs/team-global-express-formerly-toll-global-express-has-signed-a-250-million-loan"
@@ -97,7 +97,7 @@
     {
       "date": "2014",
       "title": "Vice President - Quant Engineer",
-      "description": "Individual Contributor - Focusing ",
+      "description": "Individual Contributor - Focusing on equity portfolio trading and distribution solutions",
       "company": "Goldman Sachs",
       "companyColor": "#6CACE4",
       "companyLogo": "gs_logo.svg",
@@ -136,7 +136,7 @@
     {
       "date": "2007-07",
       "title": "Associate - Engineer",
-      "description": "Individual Contributor in Equity Financing team, working on inventory optimisation, Fudning strategies and risk modelling and managment",
+      "description": "Individual Contributor in Equity Financing team, working on inventory optimisation, Funding strategies and risk modelling and management",
       "company": "Goldman Sachs",
       "companyColor": "#6CACE4",
       "companyLogo": "gs_logo.svg",
@@ -155,13 +155,13 @@
       "company": "Southampton University",
       "companyColor": "#1E4D8C",
       "companyLogo": "soton_transparent.png",
-      "tags": ["Sports", "Award", "Leadership", "University"],
+      "tags": ["Sport", "Award", "Leadership", "University"],
       "location": "🇬🇧"
     },
     {
       "date": "2008",
-      "title": "UK IronMan Triathlon",
-      "description": " IRONMAN was conceived by John and Judy Collins in 1978, it combined three of Hawaii's most challenging endurance events, a feat that seemed impossible",
+      "title": "UK Ironman Triathlon",
+      "description": "IRONMAN was conceived by John and Judy Collins in 1978, it combined three of Hawaii's most challenging endurance events, a feat that seemed impossible",
       "company": "Ironman UK",
       "companyColor": "#DC143C",
       "companyLogo": "ironman_logo.png",
